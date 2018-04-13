@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: rgb(124, 184, 182);
+    	}
+    	.button {
+    		width: 20em;
+    	}
+    	h4 {
+    		text-align: center;
+    	}
+    	#main {
+    		position: relative;
+    		top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+    	}
+
+      .custom-summarize {
+        margin: 30px auto;
+        width: 60%;
+        display: grid;
+        grid-template-columns: 12em 1fr 1fr;
+        grid-template-rows: : 1fr;
+        grid-template-areas: "slide image1 image2"; 
+        grid-column-gap: 0.5em;
+      }
+
+      .custom-summarize section:nth-child(1) { grid-area: slide; align-self: center; }
+      .custom-summarize section:nth-child(2) { grid-area: image1; }
+      .custom-summarize section:nth-child(3) { grid-area: image2; }
+
+      .custom-summarize section img { object-fit: contain; width: 100%; }
+      .prevnext {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .color {
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+
+      .rotate-img
+      {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .cover-all
+      {
+        object-fit: fill; 
+      }
+
+      .rotate-left
+      {
+        -webkit-transform: rotate(-90deg);
+        padding-top: 8em;
+      }
+
+      .resize-gs6
+      {
+        width: 5em;
+        height: 15em;
+        padding-top: 5em;
+      }
+
+      }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+      <h1 class="caps">Customize</h1>
+
+      <div class="progress">
+        <div class="circle">
+          <span class="label">1</span>
+          <span class="title">Choose styles</span>
+        </div>
+        <span class="bar done"></span>
+        <div class="circle">
+          <span class="label">2</span>
+          <span class="title">Change Material Color</span>
+        </div>
+        <span class="bar half"></span>
+        <div class="circle">
+          <span class="label">3</span>
+          <span class="title">Personalize</span>
+        </div>
+        <span class="bar"></span>
+        <div class="circle active">
+          <span class="label">4</span>
+          <span class="title">Customization Summary</span>
+        </div>
+      </div>
+
+      <h4 class="desc-font-modif-title">Summary of your chosen style</h4>
+      <div class="custom-summarize">
+        <section>
+          <section id="desc_main"></section>
+          <form>
+            <input type="text" name="size" id="size_input" class="text-box-spacing" value="TYPE SIZE HERE">
+          </form>
+          <a onclick="display_modal('size_chart')" class="size-chart-link" href="#">Size Guide</a>
+          <div id="size_chart" class="modal">
+            <div class="modal-content">
+              <p class="desc-font-modif-img">Women's Size Chart</p>
+              <img src="img/custom/Women_s.png">
+              <p class="desc-font-modif-img">Men's Size Chart</p>
+              <img src="img/custom/Sizechart-mens.png">
+            </div>
+          </div>  
+        </section>
+        
+        <section id="main_img_here" class="cover-all"></section>
+        <section id="main_img_here2" class="cover-all"></section>
+      </div>
+
+      <div class="prevnext">
+        <a href="customize-personalize.html" class="button">Back</a>
+        <a href="order-summary.html" class="button" onclick="record_size(); record_method('custom')">Proceed to Cart</a>
+      </div>
+
+	  </main>
+<script type="text/javascript">
+  var style_choice = localStorage.getItem("style_choice");
+  var style_color = localStorage.getItem("style_color_choice");
+  var price_total = localStorage.getItem("price_total");
+  var engraving_text = "Engraving: " + localStorage.getItem("engraving_text");
+  var append_here = document.getElementById("desc_main");
+  if(style_choice=="slide")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "SLIDE"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Pads Shuz"
+    var extra_desc = document.createElement('p');
+    extra_desc.innerHTML = price_total
+    var main_img = document.createElement('img');
+    main_img.classList.add("customize-sm-img");
+    main_desc.classList.add("desc-font-modif-content")
+    extra_desc.classList.add("desc-font-modif-content")
+
+    var main_img2 = document.createElement('img');
+    var append_img2 = document.getElementById("main_img_here2");
+    main_img2.classList.add('rotate-img')
+
+
+    if(style_color=="white")
+    {
+      main_img.src = "img/custom/Side-white.png";
+      main_img2.src = "img/custom/Top-white.png";
+    }
+    else if(style_color=="tan")
+    {
+      main_img.src = "img/custom/Side-Tan.png";
+      main_img2.src = "img/custom/Top-Tan.png";
+    }
+    else if(style_color=="black")
+    {
+      main_img.src = "img/custom/Side-black.png";
+      main_img2.src = "img/custom/Top-black.png";
+    }
+    else if(style_color=="maroon")
+    {
+      main_img.src = "img/custom/Side-Maroon.png";
+      main_img2.src = "img/custom/Top-Maroon.png";
+    }
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(extra_desc);
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+
+    var engraving_desc = document.createElement('p');
+    engraving_desc.innerHTML = engraving_text;
+    engraving_desc.classList.add("desc-font-modif-content");
+    append_here.appendChild(engraving_desc);
+
+    append_img2.appendChild(main_img2);
+
+  }
+  else if(style_choice=="tassel")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "TASSEL LOAFER"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "OLY Shoes"
+    var extra_desc = document.createElement('p');
+    extra_desc.innerHTML = price_total
+    var main_img = document.createElement('img');
+    main_img.classList.add("customize-sm-img");
+    main_desc.classList.add("desc-font-modif-content")
+    extra_desc.classList.add("desc-font-modif-content")
+    var main_img2 = document.createElement('img');
+    var append_img2 = document.getElementById("main_img_here2");
+
+
+
+    if(style_color=="brown")
+    {
+      main_img2.src = "img/custom/OLYBrown.png";
+      main_img.src = "img/custom/OLY-Brown.png";
+    }
+    else if(style_color=="black")
+    {
+      main_img2.src = "img/custom/OLYBlack.png";
+      main_img.src = "img/custom/OLY-Black.png";
+    }
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(extra_desc);
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+
+    var engraving_desc = document.createElement('p');
+    engraving_desc.innerHTML = engraving_text;
+    engraving_desc.classList.add("desc-font-modif-content");
+    append_here.appendChild(engraving_desc);
+    append_img2.appendChild(main_img2);
+  }
+  else if(style_choice=="estelle")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "ESTELLE"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Leather&Feet"
+    var extra_desc = document.createElement('p');
+    extra_desc.innerHTML = price_total
+    var main_img = document.createElement('img');
+    main_img.classList.add("customize-ps-img");
+    main_desc.classList.add("desc-font-modif-content")
+    extra_desc.classList.add("desc-font-modif-content")
+    var main_img2 = document.createElement('img');
+    var append_img2 = document.getElementById("main_img_here2");
+
+    if(style_color=="black")
+    {
+      main_img2.src = "img/custom/TopBlack.png";
+      main_img.src = "img/custom/SideBlack.png";
+    }
+    else if(style_color=="green")
+    {
+      main_img.src = "img/custom/SideGreen.png";
+      main_img2.src = "img/custom/TopGreen.png";
+    }
+    else if(style_color=="blue")
+    {
+      main_img.src = "img/custom/SideBlue.png";
+      main_img2.src = "img/custom/TopBlue.png";
+    }
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(extra_desc);
+    
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+
+    var engraving_desc = document.createElement('p');
+    engraving_desc.innerHTML = engraving_text;
+    engraving_desc.classList.add("desc-font-modif-content");
+    append_here.appendChild(engraving_desc);
+    append_img2.appendChild(main_img2);
+
+  }
+  else if(style_choice=="godfather")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "GS6"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Godfather Shoes"
+    var extra_desc = document.createElement('p');
+    extra_desc.innerHTML = price_total
+    var main_img = document.createElement('img');
+    main_img.classList.add("customize-sm-img");
+    main_img.classList.add("rotate-left");
+    main_desc.classList.add("desc-font-modif-content")
+    extra_desc.classList.add("desc-font-modif-content")
+    var main_img2 = document.createElement('img');
+    main_img2.classList.add("resize-gs6");
+    var append_img2 = document.getElementById("main_img_here2");
+
+    if(style_color=="brown")
+    {
+      main_img.src = "img/custom/GF4.png";
+      main_img.classList.remove("customize-ps-img2");
+      main_img.classList.add("customize-ps-img3");
+    }
+    else if(style_color=="black")
+    {
+      main_img.src = "img/custom/GS6BLACK.png";
+    }
+    else if(style_color=="dark-brown")
+    {
+      main_img.src = "img/custom/GS6DarkBrown.png";
+    }
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(extra_desc);
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+
+    var engraving_desc = document.createElement('p');
+    engraving_desc.innerHTML = engraving_text;
+    engraving_desc.classList.add("desc-font-modif-content");
+    append_here.appendChild(engraving_desc);
+    append_img2.appendChild(main_img2);
+  }
+
+  function record_size()
+  {
+    var size_data = document.getElementById("size_input").value
+    localStorage.setItem("size_data", size_data);
+  }
+
+  function display_modal(target_id)
+  {
+    var dsp = document.getElementById(target_id)
+    dsp.style.display = "block"
+
+    window.onclick = function(event) 
+    {
+        if (event.target == dsp) 
+        {
+            dsp.style.display = "none";
+        }
+    }
+  }
+
+  function record_method(method)
+  {
+    localStorage.setItem('purchase_method', method)
+  }
+</script>
+	</body>
+</html>

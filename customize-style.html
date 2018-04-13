@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: rgb(124, 184, 182);
+    	}
+    	.button {
+    		width: 20em;
+    	}
+    	h4 {
+    		text-align: center;
+    	}
+    	#main {
+    		position: relative;
+    		top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+    	}
+
+      .custom-style {
+        margin: 30px auto;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .custom-style section img {
+        object-fit: contain;
+        width: 250px;
+        height: 150px;
+      }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+      <h1 class="caps">Customize</h1>
+
+      <div class="progress">
+        <div class="circle active">
+          <span class="label">1</span>
+          <span class="title">Choose styles</span>
+        </div>
+        <span class="bar done"></span>
+        <div class="circle done">
+          <span class="label">2</span>
+          <span class="title">Change Material Color</span>
+        </div>
+        <span class="bar half"></span>
+        <div class="circle">
+          <span class="label">3</span>
+          <span class="title">Personalize</span>
+        </div>
+        <span class="bar"></span>
+        <div class="circle">
+          <span class="label">4</span>
+          <span class="title">Customization Summary</span>
+        </div>
+      </div>
+
+      <h4>Choose which style to customize</h4>
+      <div class="custom-style">
+        <section id="slide" onclick="display_button(this.id)"><img src="img/shoemakers/kenneth2.png" /> <h2 class="shoe-style">Slide</h2><p><em class="shoe-vendor">Padz Shuz</em></p></section>
+        <section id="tassel" onclick="display_button(this.id)"><img src="img/shoemakers/rolando1.png" /> <h2 class="shoe-style">Tassel Loafer</h2><p><em class="shoe-vendor">OLY Shoes</em></p></section>
+        <section id="estelle" onclick="display_button(this.id)" ><img src="img/shoemakers/nina4.png" /> <h2 class="shoe-style">Estelle</h2><p><em class="shoe-vendor">Leather&Feet</em></p></section>
+        <section id="godfather" onclick="display_button(this.id)"><img src="img/shoemakers/aaron2.png" /> <h2 class="shoe-style">GF06</h2><p><em class="shoe-vendor">Godfather Shoes</em></p></section>
+      </div>
+
+      <a href="customize-material.html" class="button-customize-next" id="csbutton">Next</a>
+	  </main>
+    <script type="text/javascript">
+      function display_button(element_id)
+      {
+        var inv = document.getElementById("csbutton");
+        inv.style.visibility = "visible";
+        var sitem = document.getElementById(element_id);
+        var slide = document.getElementById("slide");
+        var estelle = document.getElementById("estelle");
+        var godfather = document.getElementById("godfather");
+        var tassel = document.getElementById("tassel");
+        if(sitem.id=="slide")
+        {
+          sitem.classList.add("border-appear");
+          tassel.classList.remove("border-appear");
+          estelle.classList.remove("border-appear");
+          godfather.classList.remove("border-appear");
+
+        }
+        else if(sitem.id=="tassel")
+        {
+          sitem.classList.add("border-appear");
+          slide.classList.remove("border-appear");
+          estelle.classList.remove("border-appear");
+          godfather.classList.remove("border-appear");
+
+        }
+        else if(sitem.id=="estelle")
+        {
+          sitem.classList.add("border-appear");
+          tassel.classList.remove("border-appear");
+          slide.classList.remove("border-appear");
+          godfather.classList.remove("border-appear");
+
+        }
+        else if(sitem.id=="godfather")
+        {
+          sitem.classList.add("border-appear");
+          tassel.classList.remove("border-appear");
+          estelle.classList.remove("border-appear");
+          slide.classList.remove("border-appear");
+
+        }
+        localStorage.setItem("style_choice", element_id);
+      }
+    </script>
+	</body>
+</html>

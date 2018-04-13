@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+      body {
+        background-color: #edabbe;
+      }
+      .button {
+        width: 20em;
+      }
+      h4 {
+        text-align: center;
+      }
+      #main {
+        position: relative;
+        top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+      }
+      .order-summary {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 65%;
+        margin: 10px auto;
+        padding: 2em;
+        border: 2px solid #fff;
+      }
+      .order-summary ul {
+        color: #fff;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 100%;
+      }
+      .order-summary ul li {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #fff;
+      }
+
+      .order-summary ul.price li {
+        border: none;
+        color: #000;
+        font-weight: bold;
+      }
+
+      .order-summary section {
+        height: auto;
+      }
+      .order-summary section:nth-child(1) {
+        width: 25%;
+      }
+      .order-summary section:nth-child(2) {
+        width: 45%;
+      }
+      .order-summary section:nth-child(3) {
+        width: 20%;
+      }
+      .order-summary section img {
+        object-fit: contain;
+        width: 100%;
+      }
+      .subtotal {
+        width: 65%;
+        margin: auto;
+        text-align: right;
+        padding: 2em;
+      }
+      .progress .circle {
+        background-color: #7cb8b6;
+        border: 5px solid #edabbe;
+      }
+      
+      #by-custom
+      {
+        visibility: hidden;
+      }
+
+      #by-product
+      {
+        visibility: hidden;
+      }
+
+      .shoe-style-font
+      {
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+        margin: 0px;
+      }
+
+      .shoemaker-style-font
+      {
+        color: white;
+        font-weight: normal;
+        font-size: 1em;
+        font-style: italic;
+        margin: 0px;  
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- a handy skip link for keyboard users -->
+    <a href="#main" id="skip">skip to main content</a>
+    <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+    <main id="main">
+      <div id="by-custom">
+          <h1 class="caps">Order Form</h1>
+
+          <div class="progress">
+            <div class="circle active">
+              <span class="label">1</span>
+              <span class="title">Order Summary</span>
+            </div>
+            <span class="bar done"></span>
+            <div class="circle">
+              <span class="label">2</span>
+              <span class="title">Personal Details</span>
+            </div>
+            <span class="bar half"></span>
+            <div class="circle">
+              <span class="label">3</span>
+              <span class="title">Confirmation</span>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <section id="img_container">
+            </section>
+            <section>
+              <ul>
+                <li>Base Shoe Style</li>
+                <li id="li_item_2">Initials Engraving</li>
+                <li id="li_item_3">Name Engraving</li>
+              </ul>
+            </section>
+            <section>
+              <ul class="price" id="price_list"></ul>
+            </section>
+          </div>
+
+          <div class="subtotal">Subtotal: <strong id="subtotal_desc">Php 7,200.00</strong></div>
+          <a href="personal-details.html" class="button">Proceed</a>
+      </div>
+
+    </main>
+    <script type="text/javascript">
+      
+      var style_choice = localStorage.getItem("style_choice");
+      var style_color = localStorage.getItem("style_color_choice");
+      var price_total = localStorage.getItem("price_total");
+      var engraving_text_data = localStorage.getItem("engraving_text");
+      var size_data = "Size: " + localStorage.getItem("size_data");
+      var img_container = document.getElementById("img_container")
+      var color_container = document.getElementById("color_container")
+      var amount_container = document.getElementById("amount_container")
+      var price_list = document.getElementById("price_list")
+      var subtotal_desc = document.getElementById("subtotal_desc")
+      var li_item_2 = document.getElementById("li_item_2");
+      var li_item_3 = document.getElementById("li_item_3");
+
+      var method = localStorage.getItem("purchase_method");
+      if(method=="custom")
+      {
+        var target_div = document.getElementById("by-custom")
+        target_div.style.visibility = "visible";
+
+          if(style_choice=="slide")
+        {
+          var main_title = document.createElement('p');
+          main_title.innerHTML = "SLIDE"
+          var main_desc = document.createElement('p');
+          main_desc.innerHTML = "Pads Shuz"
+          var extra_desc = document.createElement('p');
+          extra_desc.innerHTML = price_total
+          var size_desc = document.createElement('p');
+          size_desc.innerHTML = size_data
+          var main_img = document.createElement('img');
+          main_img.classList.add("customize-of-img");
+          var color_option = document.createElement('option')
+          var price_content = document.createElement('p')
+          price_content.innerHTML = price_total;
+          var subtotal_content = document.createElement('p')
+          main_title.classList.add("img-text-of-title")
+          main_desc.classList.add("img-text-of-desc")
+          extra_desc.classList.add("img-text-of-desc")
+          size_desc.classList.add("img-text-of-desc")
+          price_content.classList.add("price-text-of-desc")
+          subtotal_content.classList.add("price-text-of-desc2")
+          subtotal_content.classList.add("flex-right")
+
+          main_title.classList.add("shoe-style-font");
+          main_desc.classList.add("shoemaker-style-font");
+          extra_desc.classList.add("shoemaker-style-font");
+          size_desc.classList.add("shoemaker-style-font");
+
+          var pl1 = document.createElement('li');
+          pl1.innerHTML = "PHP 1,299"
+          var pl2 = document.createElement('li');
+          pl2.innerHTML = "PHP 150"
+          var pl3 = document.createElement('li');
+          pl3.innerHTML = "PHP 250"
+          li_item_2.innerHTML = style_color;
+          li_item_3.innerHTML = "1 Line Engraving";
+          subtotal_desc.innerHTML = "PHP 1,699";
+          localStorage.setItem("price_total", "PHP 1,699");
+          price_list.appendChild(pl1)
+          price_list.appendChild(pl2)
+          price_list.appendChild(pl3)
+
+
+          if(style_color=="white")
+          {
+            main_img.src = "img/custom/Side-white.png";
+            color_option.innerHTML = "White";
+          }
+          else if(style_color=="tan")
+          {
+            main_img.src = "img/custom/Side-Tan.png";
+            color_option.innerHTML = "Tan";
+          }
+          else if(style_color=="black")
+          {
+            main_img.src = "img/custom/Side-black.png";
+            color_option.innerHTML = "Black";
+          }
+          else if(style_color=="maroon")
+          {
+            main_img.src = "img/custom/Side-Maroon.png";
+            color_option.innerHTML = "Maroon";
+          }
+
+          img_container.appendChild(main_img);
+          img_container.appendChild(main_title);
+          img_container.appendChild(main_desc);
+          img_container.appendChild(size_desc);
+          color_container.appendChild(color_option);
+          price_container.appendChild(price_content)
+          subtotal_desc.appendChild(subtotal_content);
+
+        }
+        else if(style_choice=="tassel")
+        {
+          var main_title = document.createElement('p');
+          main_title.innerHTML = "TASSEL LOAFER"
+          var main_desc = document.createElement('p');
+          main_desc.innerHTML = "OLY Shoes"
+          var extra_desc = document.createElement('p');
+          extra_desc.innerHTML = price_total
+          var size_desc = document.createElement('p');
+          size_desc.innerHTML = size_data
+          var main_img = document.createElement('img');
+          main_img.classList.add("customize-of-img");
+          var color_option = document.createElement('option')
+          var price_content = document.createElement('p')
+          price_content.innerHTML = price_total;
+          var subtotal_content = document.createElement('p')
+          subtotal_content.innerHTML = "Subtotal" +": " + price_total;
+          main_title.classList.add("img-text-of-title")
+          main_desc.classList.add("img-text-of-desc")
+          extra_desc.classList.add("img-text-of-desc")
+          size_desc.classList.add("img-text-of-desc")
+          price_content.classList.add("price-text-of-desc")
+          subtotal_content.classList.add("price-text-of-desc2")
+          subtotal_content.classList.add("flex-right")
+          
+          main_title.classList.add("shoe-style-font");
+          main_desc.classList.add("shoemaker-style-font");
+          extra_desc.classList.add("shoemaker-style-font");
+          size_desc.classList.add("shoemaker-style-font");
+
+          var pl1 = document.createElement('li');
+          pl1.innerHTML = "PHP 1,100"
+          var pl2 = document.createElement('li');
+          pl2.innerHTML = "PHP 500"
+          li_item_2.innerHTML = "Initials Engraving: " + engraving_text_data;
+          li_item_3.remove()
+          subtotal_desc.innerHTML = "PHP 1,600";
+          localStorage.setItem("price_total", "PHP 1,600");
+          price_list.appendChild(pl1)
+          price_list.appendChild(pl2)
+
+          if(style_color=="brown")
+          {
+            main_img.src = "img/custom/OLYBrown.png";
+            color_option.innerHTML = "Brown"
+          }
+          else if(style_color=="black")
+          {
+            main_img.src = "img/custom/OLYBlack.png";
+            color_option.innerHTML = "Black"
+          }
+
+          img_container.appendChild(main_img);
+          img_container.appendChild(main_title);
+          img_container.appendChild(main_desc);
+          img_container.appendChild(size_desc);
+          price_container.appendChild(price_content)
+          subtotal_desc.appendChild(subtotal_content);
+        }
+        else if(style_choice=="estelle")
+        {
+          var main_title = document.createElement('p');
+          main_title.innerHTML = "ESTELLE"
+          var main_desc = document.createElement('p');
+          main_desc.innerHTML = "Leather&Feet"
+          var extra_desc = document.createElement('p');
+          extra_desc.innerHTML = price_total
+          var size_desc = document.createElement('p');
+          size_desc.innerHTML = size_data
+          var main_img = document.createElement('img');
+          main_img.classList.add("customize-style-img2");
+          var color_option = document.createElement('option')
+          var price_content = document.createElement('p')
+          price_content.innerHTML = price_total;
+          var subtotal_content = document.createElement('p')
+          subtotal_content.innerHTML = "Subtotal" +": " + price_total;
+          main_title.classList.add("img-text-of-title")
+          main_desc.classList.add("img-text-of-desc")
+          extra_desc.classList.add("img-text-of-desc")
+          size_desc.classList.add("img-text-of-desc")
+          price_content.classList.add("price-text-of-desc")
+          subtotal_content.classList.add("price-text-of-desc2")
+          subtotal_content.classList.add("flex-right")
+
+          main_title.classList.add("shoe-style-font");
+          main_desc.classList.add("shoemaker-style-font");
+          extra_desc.classList.add("shoemaker-style-font");
+          size_desc.classList.add("shoemaker-style-font");
+
+          var pl1 = document.createElement('li');
+          pl1.innerHTML = "PHP 2,100"
+          var pl2 = document.createElement('li');
+          pl2.innerHTML = "PHP 450"
+          li_item_2.innerHTML = "Name Engraving";
+          li_item_3.remove()
+          subtotal_desc.innerHTML = "PHP 2,550";
+          localStorage.setItem("price_total", "PHP 2,550");
+          price_list.appendChild(pl1)
+          price_list.appendChild(pl2)
+
+          if(style_color=="black")
+          {
+            main_img.src = "img/custom/TopBlack.png";
+            color_option.innerHTML = "Black"
+          }
+          else if(style_color=="green")
+          {
+            main_img.src = "img/custom/TopGreen.png";
+            color_option.innerHTML = "Green"
+          }
+          else if(style_color=="blue")
+          {
+            main_img.src = "img/custom/TopBlue.png";
+            color_option.innerHTML = "Blue"
+          }
+
+          img_container.appendChild(main_img);
+          img_container.appendChild(main_title);
+          img_container.appendChild(main_desc);
+          img_container.appendChild(size_desc);
+
+        }
+        else if(style_choice=="godfather")
+        {
+          var main_title = document.createElement('p');
+          main_title.innerHTML = "GS6"
+          var main_desc = document.createElement('p');
+          main_desc.innerHTML = "Godfather Shoes"
+          var extra_desc = document.createElement('p');
+          extra_desc.innerHTML = price_total
+          var size_desc = document.createElement('p');
+          size_desc.innerHTML = size_data
+          var main_img = document.createElement('img');
+          main_img.classList.add("customize-style-img2");
+          var color_option = document.createElement('option')
+          var price_content = document.createElement('p')
+          price_content.innerHTML = price_total;
+          var subtotal_content = document.createElement('p')
+          subtotal_content.innerHTML = "Subtotal" +": " + price_total;
+          main_title.classList.add("img-text-of-title")
+          main_desc.classList.add("img-text-of-desc")
+          extra_desc.classList.add("img-text-of-desc")
+          size_desc.classList.add("img-text-of-desc")
+          price_content.classList.add("price-text-of-desc")
+          subtotal_content.classList.add("price-text-of-desc2")
+          subtotal_content.classList.add("flex-right")
+
+          main_title.classList.add("shoe-style-font");
+          main_desc.classList.add("shoemaker-style-font");
+          extra_desc.classList.add("shoemaker-style-font");
+          size_desc.classList.add("shoemaker-style-font");
+
+          var pl1 = document.createElement('li');
+          pl1.innerHTML = "PHP 5,900"
+          var pl2 = document.createElement('li');
+          pl2.innerHTML = "PHP 650"
+          var pl3 = document.createElement('li');
+          pl3.innerHTML = "PHP 650"
+          li_item_2.innerHTML = "Initials Engraving: " + engraving_text_data;
+          li_item_3.innerHTML = "Name Engraving";
+          subtotal_desc.innerHTML = "PHP 7,200";
+          localStorage.setItem("price_total", "PHP 7,200");
+          price_list.appendChild(pl1)
+          price_list.appendChild(pl2)
+          price_list.appendChild(pl3)
+          
+
+          if(style_color=="brown")
+          {
+            main_img.src = "img/custom/GF4.png";
+            color_option.innerHTML = "Brown";
+          }
+          else if(style_color=="black")
+          {
+            main_img.src = "img/custom/GS6BLACK.png";
+            color_option.innerHTML = "Black"
+          }
+          else if(style_color=="dark-brown")
+          {
+            main_img.src = "img/custom/GS6DarkBrown.png";
+            color_option.innerHTML = "Dark Brown"
+          }
+
+          img_container.appendChild(main_img);
+          img_container.appendChild(main_title);
+          img_container.appendChild(main_desc);
+          img_container.appendChild(size_desc);
+          color_container.appendChild(color_option);
+          price_container.appendChild(price_content)
+          subtotal_desc.appendChild(subtotal_content);
+
+        }
+      }
+      else if(method=="product")
+      {
+        var target_div = document.getElementById("by-product")
+        target_div.style.visibility = "visible"; 
+      }
+
+
+      
+
+      
+    </script>
+
+  </body>
+</html>

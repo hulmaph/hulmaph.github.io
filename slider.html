@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			box-sizing: border-box;
+		}
+		#slideshow {
+			height: 200px;
+			width: 1280px;
+			position: relative;
+			overflow: auto;
+			border: 1px solid blue;
+		}
+		#slider {
+			width: 6400px;
+			position: absolute;
+		}
+		.slide {
+			border: 1px solid black;
+			float: left;
+			width: 1280px;
+		}
+		.slide-odd {
+			display: grid;
+			grid-template-columns: 1fr 20em;
+			grid-template-rows: 1fr;
+			grid-template-areas: "shoes details";
+			grid-column-gap: 1em;
+		}
+		.slide-odd section:nth-child(1) { border: 1px solid red; grid-area: shoes; }
+		.slide-odd section:nth-child(2) { border: 1px solid red; grid-area: details; }
+		.slide-even {
+			display: grid;
+			grid-template-columns: 20em 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "details shoes";
+			grid-column-gap: 1em;
+		}
+		.slide-even section:nth-child(1) { border: 1px solid red; grid-area: shoes; }
+		.slide-even section:nth-child(2) { border: 1px solid red; grid-area: details; }
+	</style>
+</head>
+<body>
+	<div id="slideshow">
+	<div id="slider">
+		<div id="rolando" class="slide slide-odd">
+			<section>&nbsp;</section>
+			<section>
+				<h3>Rolando Santos</h3>
+				<p>The pride of Marikina, best known for being the country's President shoemaker.</p>
+				<a href="#">Check his collection</a>
+			</section>
+		</div>
+		<div id="kenneth" class="slide slide-even">
+			<section></section>
+			<section>
+				<h3>Kenneth Padayao</h3>
+				<p>One of the youngest shoemakers in Marikina who is passionate in bringing back the industry's glory.</p>
+				<a href="#">Check his collection</a>
+			</section>
+		</div>
+		<div id="mark" class="slide slide-odd">
+			<section></section>
+			<section>
+				<h3>Mark Agustin</h3>
+				<p>Making shoes was what he considered not a struggle, but a fulfilling job that he gets to do for both his family and hometown.</p>
+				<a href="#">Check his collection</a>
+			</section>
+		</div>
+		<div id="aaron" class="slide slide-odd">
+			<section></section>
+			<section>
+				<h3>Aaron Angeles</h3>
+				<p>The up and coming owner and shoemaker from the brand Godfather shoes.</p>
+				<a href="#">Check his collection</a>
+			</section>
+		</div>
+		<div id="nina" class="slide slide-even">
+			<section></section>
+			<section>
+				<h3>Niña Chua</h3>
+				<p>Acquired the craft through her parents, she hasn't stopped producing stylish shoes for women.</p>
+				<a href="#">Check her collection</a>
+			</section>
+		</div>
+	</div>
+</div>
+<a href="#" class="slider-prev">< Prev</a>
+<a href="#" class="slider-next">Next ></a>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	var sliderWidth = 1280;
+	var slider = $('#slider');
+	var sliderCount = $('div', slider).length;
+	var items = slider.find('div');
+	slider.width(sliderCount * sliderWidth);
+
+	$('a.slider-prev').click(function () {
+	    $('#slider').animate({
+	        left: '+=' + sliderWidth
+	    }, 500);
+	});
+
+	$('a.slider-next').click(function () {
+	    $('#slider').animate({
+	        left: '-=' + sliderWidth
+	    }, 500);
+	});
+</script>
+</body>
+</html>

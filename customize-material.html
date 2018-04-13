@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: rgb(124, 184, 182);
+    	}
+    	.button {
+    		width: 20em;
+    	}
+    	h4 {
+    		text-align: center;
+    	}
+    	#main {
+    		position: relative;
+    		top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+    	}
+
+      .custom-material {
+        margin: 30px auto;
+        width: 70%;
+        display: grid;
+        grid-template-columns: 20em 1fr;
+        grid-template-rows: : 1fr 1fr;
+        grid-template-areas: "slide image"
+        "colors image"; 
+        grid-column-gap: 1em;
+        grid-row-gap: .5em;
+      }
+
+      .custom-material section:nth-child(1) { grid-area: slide; align-self: center; }
+      .custom-material section:nth-child(2) { grid-area: colors; }
+      .custom-material section:nth-child(3) { grid-area: image; }
+
+      .custom-material section img { object-fit: contain; width: 100%; }
+      .prevnext {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .color {
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+      <h1 class="caps">Customize</h1>
+
+      <div class="progress">
+        <div class="circle">
+          <span class="label">1</span>
+          <span class="title">Choose styles</span>
+        </div>
+        <span class="bar done"></span>
+        <div class="circle active">
+          <span class="label">2</span>
+          <span class="title">Change Material Color</span>
+        </div>
+        <span class="bar half"></span>
+        <div class="circle">
+          <span class="label">3</span>
+          <span class="title">Personalize</span>
+        </div>
+        <span class="bar"></span>
+        <div class="circle">
+          <span class="label">4</span>
+          <span class="title">Customization Summary</span>
+        </div>
+      </div>
+
+      <h4 class="desc-font-modif-title2">Choose the color of the material</h4>
+      <div class="custom-material">
+        <section id="desc_main"></section>
+        <section id="color_circles" class="material-spacing"><h2 class="desc-font-modif-title">COLORS:</h2>
+        </section>
+        <section id="main_img_here"></section>
+      </div>
+
+      <div class="prevnext">
+        <a href="customize-style.html" class="button">Back</a>
+        <a href="customize-personalize.html" class="button">Next</a>
+      </div>
+
+	  </main>
+<script type="text/javascript">
+  var style_choice = localStorage.getItem("style_choice");
+  var append_here = document.getElementById("desc_main");
+  var append_here2 = document.getElementById("color_main");
+  var append_here3 = document.getElementById("color_circles");
+  if(style_choice=="slide")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "SLIDE"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Padz Shuz (PHP 1,299)"
+    main_desc.classList.add("desc-font-modif-content")
+    var extra_desc = document.createElement('p');
+    extra_desc.innerHTML = "(Extra PHP 150)"
+    extra_desc.classList.add("desc-font-modif-content")
+    var main_img = document.createElement('img');
+    main_img.id = "main_img_target"
+    main_img.src = "img/custom/Side-Maroon.png";
+    main_img.classList.add("customize-material-img");
+    var color_title = document.createElement('p');
+    var c1 = document.createElement('div');
+    var c2 = document.createElement('div');
+    var c3 = document.createElement('div');
+    var c4 = document.createElement('div');
+    
+    c1.classList.add('circle-dynamic');
+    c1.style.background = "white"
+    c1.setAttribute("onclick","change_img(1,'slide')")
+
+    c2.classList.add('circle-dynamic');
+    c2.style.background = "rgb(225, 143, 100)"
+    c2.setAttribute("onclick","change_img(2,'slide')")
+
+    c3.classList.add('circle-dynamic');
+    c3.style.background = "rgb(33, 22, 16)"
+    c3.setAttribute("onclick","change_img(3,'slide')")
+
+    c4.classList.add('circle-dynamic');
+    c4.style.background = "#661319" 
+    c4.setAttribute("onclick","change_img(4,'slide')")
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(extra_desc);
+    append_here3.appendChild(c1);
+    append_here3.appendChild(c2);
+    append_here3.appendChild(c3);
+    append_here3.appendChild(c4);
+
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+    localStorage.setItem("style_color_choice", "maroon");
+
+  }
+  else if(style_choice=="tassel")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "TASSEL"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "OLY Shoes (PHP 1,100)"
+    main_desc.classList.add("desc-font-modif-content")
+    var main_img = document.createElement('img');
+    main_img.id = "main_img_target"
+    main_img.src = "img/custom/OLYBrown.png";
+    main_img.classList.add("customize-style-img");
+    var c1 = document.createElement('div');
+    var c2 = document.createElement('div');
+
+    c1.classList.add('circle-dynamic');
+    c1.style.background = "rgb(77, 34, 12)";
+    c1.setAttribute("onclick","change_img(1,'tassel')")
+
+    c2.classList.add('circle-dynamic');
+    c2.style.background = "black"
+    c2.setAttribute("onclick","change_img(2, 'tassel')")
+
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(main_img);
+    append_here3.appendChild(c1);
+    append_here3.appendChild(c2);
+
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+    localStorage.setItem("style_color_choice", "brown");
+  }
+  else if(style_choice=="estelle")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "ESTELLE"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Leather&Feet"
+    main_desc.classList.add("desc-font-modif-content")
+    var main_img = document.createElement('img');
+    main_img.id = "main_img_target"
+    main_img.src = "img/custom/LF-.png";
+    main_img.classList.add("customize-style-img2");
+    var c1 = document.createElement('div');
+    var c2 = document.createElement('div');
+    var c3 = document.createElement('div');
+
+    c1.classList.add('circle-dynamic');
+    c1.setAttribute("onclick","change_img(1,'estelle')")
+
+    c2.classList.add('circle-dynamic');
+    c2.style.background = "rgb(75, 76, 68)"
+    c2.setAttribute("onclick","change_img(2, 'estelle')")
+
+    c3.classList.add('circle-dynamic');
+    c3.style.background = "rgb(57, 81, 107)"
+    c3.setAttribute("onclick","change_img(3, 'estelle')")
+
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(main_img);
+    append_here3.appendChild(c1);
+    append_here3.appendChild(c2);
+    append_here3.appendChild(c3);
+
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+    localStorage.setItem("style_color_choice", "black");
+  }
+  else if(style_choice=="godfather")
+  {
+    var main_title = document.createElement('p');
+    main_title.innerHTML = "GS6"
+    main_title.classList.add("desc-font-modif-title")
+    var main_desc = document.createElement('p');
+    main_desc.innerHTML = "Godfather Shoes"
+    main_desc.classList.add("desc-font-modif-content")
+    var main_img = document.createElement('img');
+    main_img.id = "main_img_target"
+    main_img.src = "img/custom/GF4.png";
+    main_img.classList.add("customize-style-img");
+    var c1 = document.createElement('div');
+    var c2 = document.createElement('div');
+    var c3 = document.createElement('div');
+
+    c1.classList.add('circle-dynamic');
+    c1.style.background = "rgb(191, 82, 34)"
+    c1.setAttribute("onclick","change_img(1,'godfather')")
+
+    c2.classList.add('circle-dynamic');
+    c2.setAttribute("onclick","change_img(2, 'godfather')")
+
+    c3.classList.add('circle-dynamic');
+    c3.style.background = "rgb(65, 42, 33)"
+    c3.setAttribute("onclick","change_img(3, 'godfather')")
+
+
+    append_here.appendChild(main_title);
+    append_here.appendChild(main_desc);
+    append_here.appendChild(main_img);
+    append_here3.appendChild(c1);
+    append_here3.appendChild(c2);
+    append_here3.appendChild(c3);
+
+    var append_img = document.getElementById("main_img_here");
+    append_img.appendChild(main_img);
+    localStorage.setItem("style_color_choice", "brown");
+  }
+
+  function change_img(img_number,img_type)
+  {
+    var target = document.getElementById("main_img_target");
+
+    if(img_type=="slide")
+    {
+      if(img_number==1)
+      {
+        target.src = "img/custom/Side-white.png";
+        localStorage.setItem("style_color_choice", "white");
+      }
+      else if(img_number==2)
+      {
+        target.src = "img/custom/Side-Tan.png";
+        localStorage.setItem("style_color_choice", "tan");  
+      }
+      else if(img_number==3)
+      {
+        target.src = "img/custom/Side-black.png";
+        localStorage.setItem("style_color_choice", "black");  
+      }
+      else if(img_number==4)
+      {
+        target.src = "img/custom/Side-Maroon.png";
+        localStorage.setItem("style_color_choice", "maroon"); 
+      }
+
+    }
+    else if(img_type=="tassel")
+    {
+      if(img_number==1)
+      {
+        target.src = "img/custom/OLYBrown.png";
+        localStorage.setItem("style_color_choice", "brown");
+      }
+      else if(img_number==2)
+      {
+        target.src = "img/custom/OLYBlack.png";
+        localStorage.setItem("style_color_choice", "black");  
+      }
+    }
+    else if(img_type=="estelle")
+    {
+      if(img_number==1)
+      {
+        target.src = "img/custom/LF-.png";
+        localStorage.setItem("style_color_choice", "black");
+      }
+      else if(img_number==2)
+      {
+        target.src = "img/custom/LF1.png";
+        localStorage.setItem("style_color_choice", "green");  
+      }
+      else if(img_number==3)
+      {
+        target.src = "img/custom/LF.png";
+        localStorage.setItem("style_color_choice", "blue"); 
+      }
+    }
+    else if(img_type=="godfather")
+    {
+      if(img_number==1)
+      {
+        target.src = "img/custom/GF4.png";
+        target.classList.remove("customize-style-img3");
+        target.classList.add("customize-style-img");
+        localStorage.setItem("style_color_choice", "brown");
+      }
+      else if(img_number==2)
+      {
+        target.src = "img/custom/GS6BLACK.png";
+        target.classList.remove("customize-style-img");
+        target.classList.add("customize-style-img3");
+        localStorage.setItem("style_color_choice", "black");  
+      }
+      else if(img_number==3)
+      {
+        target.src = "img/custom/GS6DarkBrown.png";
+        target.classList.remove("customize-style-img");
+        target.classList.add("customize-style-img3");
+        localStorage.setItem("style_color_choice", "dark-brown"); 
+      }
+    }
+
+    
+  }
+</script>
+	</body>
+</html>

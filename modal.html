@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- declare characterset -->
+  <meta charset="utf-8">
+  <!-- a viewport declaration which does not disable zooming -->
+  <meta name="viewport" content="width=device-width, initial- scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<title></title>
+	<style type="text/css">
+	body {
+		font-family: 'Raleway', sans-serif;
+	}
+	.modal 
+	{
+		background-color: #f3cf97;
+		width: 75%;
+		display: none; 
+	    position: fixed; 
+	    z-index: 1; 
+	    left: 0;
+	    top: 0; 
+	}
+
+	.modal-content
+	{
+		margin: 15% auto; 
+	    padding: 20px;
+	    border: 1px solid #888;
+	    width: 50%; 
+	}
+
+	.container {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "left right";
+	}
+	.container article:nth-child(1) { 
+		grid-area: left;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between; 
+	}
+	.container article:nth-child(1) img {
+		margin: 0;
+	}
+	.container article:nth-child(2) { 
+		grid-area: right;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between; 
+		padding: 1em;
+	}
+
+	.container article:nth-child(2) section:nth-child(1) { 
+		text-align: right;
+		width: 100%;
+		height: auto;
+		padding: 10px 0;
+	}
+
+	.container article:nth-child(2) section:nth-child(3) {
+		text-align: right;
+		width: 100%;
+		height: auto;
+		padding: 10px 0;
+	}	
+	</style>
+</head>
+<body>
+	<a href="#" onclick="display_modal('modal_sample')">Click Here</a>
+	<div class="modal" id="modal_sample">
+		<div class="container">
+			<article>
+			<a href="#" class="back-button">Back</a>
+				<img src="http://via.placeholder.com/100x100" />
+				<img src="http://via.placeholder.com/100x100" />
+				<img src="http://via.placeholder.com/100x100" />
+				<img src="http://via.placeholder.com/100x100" />
+			</article>
+			<article>
+				<section><h2>Tassel Loafer</h2>
+					<p>Php 1,100.00</p>
+					<select value="Size">
+						<option value="9">9</option>
+					</select><br/>
+					<a href=-"#">Size guide</a></section>
+				<section>
+					<img src="http://via.placeholder.com/540x360" />
+				</section>
+				<section><a href="#">Add to Cart</a></section>
+			</article>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function display_modal(target_id)
+		{
+			var dsp = document.getElementById(target_id)
+			dsp.style.display = "block"
+
+			window.onclick = function(event) 
+			{
+			    if (event.target == dsp) 
+			    {
+			        dsp.style.display = "none";
+			    }
+			}
+		}
+	</script>
+</body>
+</html>

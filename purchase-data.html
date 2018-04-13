@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h4>PURCHASE DATA FOR THIS SESSION</h4>
+<table id="table_append" style="width: 100%">
+	<tr>
+		<td>STYLE</td>
+		<td>COLOR</td>
+		<td>PRICE</td>
+		<td>SIZE</td>
+    <td>FULL NAME</td>
+    <td>CELLPHONE</td>
+    <td>LANDLINE</td>
+    <td>EMAIL</td>
+    <td>ADDRESS</td>
+    <td>CITY</td>
+    <td>ZIPCODE</td>
+	</tr>
+</table>
+
+
+
+<script type="text/javascript">
+  obj = JSON.parse(localStorage.getItem("purchase_data"))
+  console.log(obj)
+  var append_here = document.getElementById("table_append")
+  for(var i=0; i<obj.length;i++)
+  {
+  	var row = document.createElement('tr')
+  	var styler = document.createElement('td')
+  	var color = document.createElement('td')
+  	var price = document.createElement('td')
+    var size = document.createElement('td')
+  	var fn = document.createElement('td')
+    var cp = document.createElement('td')
+    var lnd = document.createElement('td')
+    var em = document.createElement('td')
+    var addr = document.createElement('td')
+    var ct  = document.createElement('td')
+    var zp = document.createElement('td')
+
+  	styler.innerHTML = obj[i].style
+  	color.innerHTML = obj[i].color
+  	price.innerHTML = obj[i].price
+  	size.innerHTML = obj[i].size
+    fn.innerHTML = obj[i].full_name
+    cp.innerHTML = obj[i].cellphone
+    lnd.innerHTML =  obj[i].landline
+    em.innerHTML = obj[i].email 
+    addr.innerHTML = obj[i].address 
+    ct.innerHTML =   obj[i].city 
+    zp.innerHTML = obj[i].zipcode
+
+  	row.appendChild(styler)
+  	row.appendChild(color)
+  	row.appendChild(price)
+  	row.appendChild(fn)
+    row.appendChild(cp)
+    row.appendChild(lnd)
+    row.appendChild(em)
+    row.appendChild(addr)
+    row.appendChild(ct)
+    row.appendChild(zp)
+  	append_here.appendChild(row)
+  }
+</script>
+</body>
+</html>

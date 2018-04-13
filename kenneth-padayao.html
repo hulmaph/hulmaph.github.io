@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: #75bfdd;
+    	}
+    	a, a:link, a:visited, a:hover, a:active {
+    		color: white;
+    	}
+    	header {
+    		position: relative;
+    	}
+    	.button {
+    		display: inline-block;
+    		color: #000 !important;
+    	}
+    	h1 {
+    		text-align: left;
+    	}
+    	#wrapper {
+    		width: 85%;
+    		margin: 0 auto;
+    		display: grid;
+    		grid-template-columns: 1fr 1fr;
+    		grid-template-rows: 1fr;
+    		grid-template-areas: "left right";
+    		grid-column-gap: 5em;
+    	}
+        #main {
+            margin: auto;
+            width: 100%;
+            max-width: 1280px;
+        }
+    	#wrapper article:nth-child(1) { grid-area: left; }
+        #wrapper article:nth-child(2) {
+            margin: 4em 0 0 0; 
+            grid-area: right; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr; 
+            grid-template-areas: "one two"
+            "three four";
+            grid-column-gap: 1em;
+            grid-row-gap: 1em;
+        }
+        .maker {
+            border: 2px solid #edc485;
+            overflow: auto;
+            padding: 10px 30px 10px 10px;
+        }
+        .left {
+            float: left;
+            width: 30%;
+        }
+        .indent {
+            float: right;
+            width: 68%;
+        }
+        .shoebox:nth-child(1) { position: relative; align-self: center; grid-area: "one" }
+        .shoebox:nth-child(2) { position: relative; align-self: center; grid-area: "two" }
+        .shoebox:nth-child(3) { position: relative; align-self: center; grid-area: "three" }
+        .shoebox:nth-child(4) { position: relative; align-self: center; grid-area: "four" }
+
+        .shoebox img {
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .hover {
+            color: #fff;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .hover h2 {
+            margin: 0;
+            padding: 0;
+        }
+        .hover p {
+            margin: 0;
+            padding: 0;
+        }
+        .hover .button {
+            width: 80%;
+        }
+        .shoebox:hover .hover {
+            visibility: visible;
+        }
+
+        .shoebox:hover img {
+            opacity: 0.4;
+        }
+
+        .shoebox:nth-child(1) .hover {
+            top: 17px;
+        }
+
+            body {
+        font-family: 'Raleway', sans-serif;
+    }
+    .modal {
+        display: none; 
+        z-index: 9; 
+        background-color: #f3cf97;   
+        padding: 10px;
+        width: 75%;
+        height: 75%;
+        top: 100px;
+        position: fixed;
+        margin-left: auto;
+        margin-right: auto; 
+        left: 0;
+        right: 0;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "left right";
+        text-align: center;
+    }
+    .container article:nth-child(1) { 
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around; 
+    }
+    .container article:nth-child(1) img {
+        margin: 0;
+    }
+    .container article:nth-child(2) { 
+        grid-area: right;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; 
+        padding: 1em;
+    }
+
+    .container article:nth-child(2) section:nth-child(1) { 
+        text-align: right;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .container article:nth-child(2) section:nth-child(3) {
+        text-align: right;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+    .modal img { opacity: 1.0; }
+    .modal:hover img { opacity: 1.0; }   
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products-bg">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+	  	<div id="wrapper">
+	  		<article>
+			  	<a href="index.html#products-bg" class="button" style =" margin-bottom: 2em">Back</a>
+			  	<div class="maker">
+			  		<img src="img/shoemakers/Circle-KP.png" class="left" />
+			  		<div class="indent">
+				  		<h1 class="caps">Kenneth Padayao</h1>
+				  		<p>Kenneth is one of the shoemakers who is young and hopeful to raise and reglorify the industry through the business he acquired from his parents. He makes sure to keep their products trendy and stylish without having to compromise the quality.</p>
+				  		<a href="shoemakers.html#kenneth">Read more</a>
+				  		<h1 class="caps">Contact Details</h1>
+				  		<p><strong>Cellphone number:</strong> 0995-458-8340<br/>
+				  			<strong>Address:</strong> 345 M. Roxas St. San Roque, Marikina City</p>
+			  		</div>
+			  	</div>
+		  	</article>
+		  	<article>
+					<div class="shoebox"><img class="items" src="img/shoemakers/kenneth3.png" />
+                        <div class="hover"><h2>Mule</h2> <p>Php1,399.00</p> <a href="#" class="button" onclick="display_modal('kenneth_mule')">Quick view</a></div>
+
+                          <div class="modal" id="kenneth_mule" >
+                                <div class="container">
+                                    <article>
+                                    <button class ="button-modal" style = "margin-left:2em; "><a href="kenneth-padayao.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/PS3A.png" onclick="change_img('ml_main_img',1)">
+                                        <img src="img/custom/PS3B.png" onclick="change_img('ml_main_img',2)">
+                                        <img src="img/custom/PS3C.png" onclick="change_img('ml_main_img',3)"> 
+                                        <img src="img/shoemakers/kenneth3.png" onclick="change_img('ml_main_img',4)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>Mule</h2>
+                                            <p>Php 1,399.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/kenneth3.png" id="ml_main_img">
+                                            </section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration:none" onclick="record_option('mule', 'Black' , 'PHP 1,399','size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+                    </div>
+
+                         		
+					<div class="shoebox"><img class="items" src="img/shoemakers/kenneth2.png" />
+                        <div class="hover"><h2>Slide</h2> <p>Php1,299.00</p> <a href="#" onclick="display_modal('kenneth_slide')" class="button">Quick view</a></div>
+
+                        <div class="modal" id="kenneth_slide" >
+                                <div class="container">
+                                    <article>
+                                    <button class ="button-modal" style = "margin-left:2em; "><a href="kenneth-padayao.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/PS2A.png" onclick="change_img('sd_main_img',1)">
+                                        <img src="img/custom/PS2C.png" onclick="change_img('sd_main_img',2)">
+                                        <img src="img/shoemakers/kenneth2.png" onclick="change_img('sd_main_img',3)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>SLIDE</h2>
+                                            <p>Php 1,299.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/kenneth2.png" id="sd_main_img">
+                                            </section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration:none" onclick="record_option('slide', 'maroon' , 'PHP 1,299', 'size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+
+        
+
+                    </div>
+
+
+					<div class="shoebox"><img class="items" src="img/shoemakers/kenneth1.png" />
+                        <div class="hover"><h2>Sneakers</h2> <p>Php2,499.00</p> <a href="#"  onclick="display_modal('kenneth_sneaker')" class="button">Quick view</a></div>
+
+                            <div class="modal" id="kenneth_sneaker" >
+                                <div class="container">
+                                    <article>
+                                   <button class ="button-modal" style = "margin-left:2em; "><a href="kenneth-padayao.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/PS1A.png" onclick="change_img('sn_main_img',1)">
+                                        <img src="img/custom/PS1B.png" onclick="change_img('sn_main_img',2)">
+                                        <img src="img/custom/PS1C.png" onclick="change_img('sn_main_img',3)">
+
+                                        <img src="img/shoemakers/kenneth1.png" onclick="change_img('sn_main_img',4)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>SNEAKERS</h2>
+                                            <p>Php 2,499.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/kenneth1.png" id="sn_main_img">
+                                            </section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration: none"onclick="record_option('sneakers', 'Brown' , 'PHP 2,499', 'size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+
+                    </div>
+					<div class="shoebox"></div>		  		
+		  	</article>
+	  	</div>
+	  </main>
+    <script type="text/javascript">
+        function display_modal(target_id)
+        {
+            var dsp = document.getElementById(target_id)
+            dsp.style.display = "block"
+
+            window.onclick = function(event) 
+            {
+                if (event.target == dsp) 
+                {
+                    dsp.style.display = "none";
+                }
+            }
+        }
+        function change_img(target_id,img_number)
+        {
+            var target = document.getElementById(target_id);
+            if(target_id=="ml_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/PS3A.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/custom/PS3C.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/PS3B.png"
+                }
+                else if(img_number ==4)
+                {
+                    target.src ="img/shoemakers/kenneth3.png"
+                }
+            }
+            else if(target_id=="sn_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/PS1A.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/PS1B.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/custom/PS1C.png"
+                }
+                 else if(img_number==4)
+                {
+                    target.src = "img/shoemakers/kenneth1.png"
+                }
+            }
+            else if(target_id=="sd_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/PS2A.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/PS2C.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/shoemakers/kenneth2.png"
+                }
+            }
+        }
+
+        function record_option(style, color, price, target_id)
+        {
+            var size_data = document.getElementById(target_id).value;
+            localStorage.setItem("size_data", size_data);
+            localStorage.setItem("style_color_choice", color);
+            localStorage.setItem("style_choice", style);
+            localStorage.setItem("price_total", price);
+            localStorage.setItem("purchase_method", "product");
+        }
+    </script>
+	</body>
+</html>

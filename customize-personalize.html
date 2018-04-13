@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: rgb(124, 184, 182);
+    	}
+    	.button {
+    		width: 20em;
+    	}
+    	h4 {
+    		text-align: center;
+    	}
+
+      a
+      {
+        text-decoration: none;
+        color: white;
+      }
+    	#main {
+    		position: relative;
+    		top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+    	}
+
+      .custom-material {
+        margin: 30px auto;
+        width: 70%;
+        display: grid;
+        grid-template-columns: 20em 1fr;
+        grid-template-rows: : 1fr;
+        grid-template-areas: "slide image"; 
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+      }
+
+      .custom-material section:nth-child(1) { grid-area: slide; align-self: center; }
+      .custom-material section:nth-child(2) { grid-area: image; }
+
+      .custom-material section img { object-fit: contain; width: 100%; }
+      .prevnext {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .color {
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-right: 0.5em;
+      }
+
+      .container {
+          position: relative;
+          text-align: center;
+          color: white;
+      }
+
+      .repos-eng {
+          position: absolute;
+          bottom: 8em;
+          left: 10em;
+          font-weight: bold;
+      }
+
+      .repos-eng2 {
+          position: absolute;
+          bottom: 5em;
+          left: 5em;
+          font-weight: bold;
+      }
+
+      .repos-eng3 {
+          position: absolute;
+          bottom: 16em;
+          left: 20em;
+          font-weight: bold;
+      }
+
+      .repos-eng4 {
+          position: absolute;
+          bottom: 4em;
+          left: 4em;
+          font-weight: bold;
+      }
+
+      .repos-eng5 {
+          position: absolute;
+          bottom: 5.5em;
+          left: 4em;
+          font-weight: bold;
+      }
+
+      .button-eng
+      {
+        background-color: #F2D08F;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+
+      }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+      <h1 class="caps">Customize</h1>
+
+      <div class="progress">
+        <div class="circle done">
+          <span class="label">1</span>
+          <span class="title">Choose styles</span>
+        </div>
+        <span class="bar done"></span>
+        <div class="circle done">
+          <span class="label">2</span>
+          <span class="title">Change Material Color</span>
+        </div>
+        <span class="bar half"></span>
+        <div class="circle active">
+          <span class="label">3</span>
+          <span class="title">Personalize</span>
+        </div>
+        <span class="bar"></span>
+        <div class="circle">
+          <span class="label">4</span>
+          <span class="title">Customization Summary</span>
+        </div>
+      </div>
+
+      <h4>Personalize your shoes by engraving your name/text on the upper side</h4>
+      <div class="custom-material">
+        <section>
+          <div id="desc_main"></div>
+          <button class="button-eng">
+            <a href="#" onclick="engrave()">APPROVE</a>  
+          </button>
+        </section>
+        <section id="main_img_here"></section>
+        
+      </div>
+
+      <div class="prevnext">
+        <a href="customize-material.html" class="button">Back</a>
+        <a href="customize-summary.html" class="button" onclick="record_engraving()">Next</a>
+      </div>
+
+	  </main>
+    <script type="text/javascript">
+      var style_choice = localStorage.getItem("style_choice");
+      var style_color = localStorage.getItem("style_color_choice");
+      var append_here = document.getElementById("desc_main");
+      if(style_choice=="slide")
+      {
+        var main_title = document.createElement('p');
+        main_title.innerHTML = "SLIDE"
+        main_title.classList.add("desc-font-modif-title")
+        var main_desc = document.createElement('p');
+        main_desc.innerHTML = "Pads Shuz (PHP 1,299)"
+        var extra_desc = document.createElement('p');
+        extra_desc.innerHTML = "(Extra PHP 250)"
+        main_desc.classList.add("desc-font-modif-content")
+        extra_desc.classList.add("desc-font-modif-content")
+        var main_img = document.createElement('img');
+        main_img.classList.add("customize-ps-img2");
+        var eng_box = document.createElement('form');
+        var eng_input = document.createElement('input');
+        eng_input.id = "engraving_text"
+        eng_input.name = "eng_input";
+        eng_input.type = "text"
+        eng_input.value = "TYPE TEXT HERE";
+        eng_box.id = "eng_box";
+        eng_input.classList.add("text-box-spacing");
+
+        var img_div = document.createElement('div')
+        img_div.classList.add('container');
+        var append_img = document.getElementById("main_img_here");
+        var img_text = document.createElement('p')
+        img_text.classList.add('repos-eng');
+        img_text.id = "img_text"
+        img_text.innerHTML = "ENGRAVING";  
+
+        if(style_color=="white")
+        {
+          main_img.src = "img/custom/Top-white.png";
+        }
+        else if(style_color=="tan")
+        {
+          main_img.src = "img/custom/Slide-tan.png";
+          img_text.classList.remove('repos-eng');
+          img_text.classList.add('repos-eng5');
+          
+        }
+        else if(style_color=="black")
+        {
+          main_img.src = "img/custom/Top-black.png";
+        }
+        else if(style_color=="maroon")
+        {
+          main_img.src = "img/custom/Top-Maroon.png";
+        }
+
+        append_here.appendChild(main_title);
+        append_here.appendChild(main_desc);
+        append_here.appendChild(extra_desc);
+        append_here.appendChild(eng_box);
+        eng_box.appendChild(eng_input);
+        localStorage.setItem("price_total", "PHP 1,549");
+
+        
+
+        img_div.appendChild(main_img);
+        img_div.appendChild(img_text);
+        append_img.appendChild(img_div);
+
+      }
+      else if(style_choice=="tassel")
+      {
+        var main_title = document.createElement('p');
+        main_title.innerHTML = "TASSEL LOAFER"
+        main_title.classList.add("desc-font-modif-title")
+        var main_desc = document.createElement('p');
+        main_desc.innerHTML = "OLY Shoes (PHP 1,100)"
+        var extra_desc = document.createElement('p');
+        extra_desc.innerHTML = "+ Extra PHP 500 for initials engraving"
+        main_desc.classList.add("desc-font-modif-content")
+        extra_desc.classList.add("desc-font-modif-content")
+        var main_img = document.createElement('img');
+        main_img.classList.add("customize-ps-img3");
+        var eng_box = document.createElement('form');
+        var eng_input = document.createElement('input');
+        eng_input.name = "eng_input";
+        eng_input.id = "engraving_text"
+        eng_input.type = "text;"
+        eng_box.id = "eng_box";
+        eng_input.classList.add("text-box-spacing");
+        eng_input.value = "TYPE TEXT HERE";
+
+        if(style_color=="brown")
+        {
+          main_img.src = "img/custom/OLYBrown.png";
+        }
+        else if(style_color=="black")
+        {
+          main_img.src = "img/custom/OLYBlack.png";
+        }
+
+        append_here.appendChild(main_title);
+        append_here.appendChild(main_desc);
+        append_here.appendChild(extra_desc);
+        append_here.appendChild(eng_box);
+        eng_box.appendChild(eng_input);
+        localStorage.setItem("price_total", "PHP 1,600");
+
+        var append_img = document.getElementById("main_img_here");
+        append_img.appendChild(main_img);
+
+        var img_div = document.createElement('div')
+        img_div.classList.add('container');
+        var append_img = document.getElementById("main_img_here");
+        var img_text = document.createElement('p')
+        img_text.classList.add('repos-eng2');
+        img_text.id = "img_text"
+        img_text.innerHTML = "ENGRAVING";  
+
+        img_div.appendChild(main_img);
+        img_div.appendChild(img_text);
+        append_img.appendChild(img_div);
+
+      }
+      else if(style_choice=="estelle")
+      {
+        var main_title = document.createElement('p');
+        main_title.innerHTML = "ESTELLE"
+        main_title.classList.add("desc-font-modif-title")
+        var main_desc = document.createElement('p');
+        main_desc.innerHTML = "Leather&Feet (PHP 2,100)"
+        var extra_desc = document.createElement('p');
+        extra_desc.innerHTML = "(Extra PHP 450)"
+        main_desc.classList.add("desc-font-modif-content")
+        extra_desc.classList.add("desc-font-modif-content")
+        var main_img = document.createElement('img');
+        main_img.classList.add("customize-ps-img");
+        var eng_box = document.createElement('form');
+        var eng_input = document.createElement('input');
+        eng_input.name = "eng_input";
+        eng_input.id = "engraving_text"
+        eng_input.type = "text";
+        eng_box.id = "eng_box";
+        eng_input.classList.add("text-box-spacing");
+        eng_input.value = "TYPE TEXT HERE";
+
+        if(style_color=="black")
+        {
+          main_img.src = "img/custom/TopBlack.png";
+        }
+        else if(style_color=="green")
+        {
+          main_img.src = "img/custom/TopGreen.png";
+        }
+        else if(style_color=="blue")
+        {
+          main_img.src = "img/custom/TopBlue.png";
+        }
+
+        append_here.appendChild(main_title);
+        append_here.appendChild(main_desc);
+        append_here.appendChild(extra_desc);
+        append_here.appendChild(eng_box);
+        eng_box.appendChild(eng_input);
+        localStorage.setItem("price_total", "PHP 2,550");
+
+        var append_img = document.getElementById("main_img_here");
+        append_img.appendChild(main_img);
+
+        var img_div = document.createElement('div')
+        img_div.classList.add('container');
+        var append_img = document.getElementById("main_img_here");
+        var img_text = document.createElement('p')
+        img_text.classList.add('repos-eng3');
+        img_text.id = "img_text"
+        img_text.innerHTML = "ENGRAVING";  
+
+        img_div.appendChild(main_img);
+        img_div.appendChild(img_text);
+        append_img.appendChild(img_div);
+
+      }
+      else if(style_choice=="godfather")
+      {
+        var main_title = document.createElement('p');
+        main_title.innerHTML = "GS6"
+        main_title.classList.add("desc-font-modif-title")
+        var main_desc = document.createElement('p');
+        main_desc.innerHTML = "Godfather Shoes (PHP 5,900)"
+        var extra_desc = document.createElement('p');
+        extra_desc.innerHTML = "+ Extra PHP 650 engraving without color"
+        var extra_desc2 = document.createElement('p');
+        extra_desc2.innerHTML = "+ Extra PHP 750 with color (gold or silver)"
+        main_desc.classList.add("desc-font-modif-content")
+        extra_desc.classList.add("desc-font-modif-content")
+        extra_desc2.classList.add("desc-font-modif-content")
+        var main_img = document.createElement('img');
+        main_img.classList.add("customize-ps-img2");
+        var eng_box = document.createElement('form');
+        var eng_input = document.createElement('input');
+        eng_input.name = "eng_input";
+        eng_input.type = "text"
+        eng_input.id = "engraving_text"
+        eng_box.id = "eng_box";
+        eng_input.classList.add("text-box-spacing");
+        eng_input.value = "TYPE TEXT HERE";  
+
+        if(style_color=="brown")
+        {
+          main_img.src = "img/custom/GF4.png";
+          main_img.classList.remove("customize-ps-img2");
+          main_img.classList.add("customize-ps-img3");
+        }
+        else if(style_color=="black")
+        {
+          main_img.src = "img/custom/GS6BLACK.png";
+        }
+        else if(style_color=="dark-brown")
+        {
+          main_img.src = "img/custom/GS6DarkBrown.png";
+        }
+
+        append_here.appendChild(main_title);
+        append_here.appendChild(main_desc);
+        append_here.appendChild(extra_desc);
+        append_here.appendChild(extra_desc2);
+        append_here.appendChild(eng_box);
+        eng_box.appendChild(eng_input);
+        localStorage.setItem("price_total", "PHP 7,300");
+
+        var append_img = document.getElementById("main_img_here");
+        append_img.appendChild(main_img);
+
+        var img_div = document.createElement('div')
+        img_div.classList.add('container');
+        var append_img = document.getElementById("main_img_here");
+        var img_text = document.createElement('p')
+        img_text.classList.add('repos-eng4');
+        img_text.id = "img_text"
+        img_text.innerHTML = "ENGRAVING";  
+
+        img_div.appendChild(main_img);
+        img_div.appendChild(img_text);
+        append_img.appendChild(img_div);
+
+      }
+
+      function record_engraving()
+      {
+        var engraving_text = document.getElementById("engraving_text").value
+        localStorage.setItem("engraving_text", engraving_text)
+      }
+
+      function display_engraving()
+      {
+        var engraving_text = document.getElementById("engraving_text").value
+        
+      }
+
+      function engrave()
+      {
+        var eng_text = document.getElementById("engraving_text");
+        var img_text = document.getElementById("img_text");
+        img_text.innerHTML = eng_text.value;
+      }
+        
+      
+    </script>
+	</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: #75bfdd;
+    	}
+    	a, a:link, a:visited, a:hover, a:active {
+    		color: white;
+    	}
+    	header {
+    		position: relative;
+    	}
+    	.button {
+    		display: inline-block;
+    		color: #000 !important;
+    	}
+    	h1 {
+    		text-align: left;
+    	}
+        #main {
+            margin: auto;
+            width: 100%;
+            max-width: 1280px;
+        }
+    	#wrapper {
+    		width: 85%;
+    		margin: 0 auto;
+    		display: grid;
+    		grid-template-columns: 1fr 1fr;
+    		grid-template-rows: 1fr;
+    		grid-template-areas: "left right";
+    		grid-column-gap: 5em;
+    	}
+    	#wrapper article:nth-child(1) { grid-area: left; }
+        #wrapper article:nth-child(2) {
+            margin: 4em 0 0 0; 
+            grid-area: right; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr; 
+            grid-template-areas: "one two"
+            "three four";
+            grid-column-gap: 1em;
+            grid-row-gap: 1em;
+        }
+        .maker {
+            border: 2px solid #edc485;
+            overflow: auto;
+            padding: 10px 30px 10px 10px;
+        }
+        .left {
+            float: left;
+            width: 30%;
+        }
+        .indent {
+            float: right;
+            width: 68%;
+        }
+        .shoebox:nth-child(1) { position: relative; align-self: center; grid-area: "one" }
+        .shoebox:nth-child(2) { position: relative; align-self: center; grid-area: "two" }
+        .shoebox:nth-child(3) { position: relative; align-self: center; grid-area: "three" }
+        .shoebox:nth-child(4) { position: relative; align-self: center; grid-area: "four" }
+
+        .shoebox img {
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .hover {
+            color: #fff;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .hover h2 {
+            margin: 0;
+            padding: 0;
+        }
+        .hover p {
+            margin: 0;
+            padding: 0;
+        }
+        .hover .button {
+            width: 80%;
+        }
+        .shoebox:hover .hover {
+            visibility: visible;
+        }
+
+        .shoebox:hover img {
+            opacity: 0.4;
+        }
+         body {
+        font-family: 'Raleway', sans-serif;
+    }
+    .modal {
+        display: none; 
+        z-index: 9; 
+        background-color: #f3cf97;   
+        padding: 10px;
+        width: 75%;
+        height: 75%;
+        top: 100px;
+        position: fixed;
+        margin-left: auto;
+        margin-right: auto; 
+        left: 0;
+        right: 0;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "left right";
+        text-align: center;
+    }
+    .container article:nth-child(1) { 
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around; 
+    }
+    .container article:nth-child(1) img {
+        margin: 0;
+    }
+    .container article:nth-child(2) { 
+        grid-area: right;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; 
+        padding: 1em;
+    }
+
+    .container article:nth-child(2) section:nth-child(1) { 
+        text-align: right;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .container article:nth-child(2) section:nth-child(3) {
+        text-align: right;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+    .modal img { opacity: 1.0; }
+    .modal:hover img { opacity: 1.0; }   
+    </style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products-bg">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+	  	<div id="wrapper">
+	  		<article>
+			  	<a href="index.html#products-bg" class="button" style =" margin-bottom: 2em">Back</a>
+			  	<div class="maker">
+			  		<img src="img/shoemakers/Circle-MA.png" class="left" />
+			  		<div class="indent">
+				  		<h1 class="caps">Mark Augustin</h1>
+				  		<p>Mardini Shoes is a family-owned business that he acquired from his grandparents. He has been in the industry since the year 1996, and is persevering and hopeful with what the Marikina shoe industry has to offer to others.</p>
+				  		<a href="shoemakers.html#mark">Read more</a>
+				  		<h1 class="caps">Contact Details</h1>
+				  		<p><strong>Cellphone number:</strong> 0917-502-8245<br/>
+				  			<strong>Address:</strong> 53 H. Bautista St. Concepcion Uno, Marikina City</p>
+			  		</div>
+			  	</div>
+		  	</article>
+		  	<article>
+					<div class="shoebox"><img class="items" src="img/shoemakers/mark3.png" />
+                    <div class="hover"><h2>Chukka Boots 01</h2> <p>Php1,150.00</p> <a href="#" onclick="display_modal('chunka1')" class="button">Quick view</a></div>
+
+                    <div class="modal" id="chunka1" >
+                                <div class="container">
+                                    <article>
+                                    <button class ="button-modal" style = "margin-left:2em; "><a href="mark-agustin.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/IDK2A.png" onclick="change_img('cb_main_img',1)">
+                                        <img src="img/custom/IDK2B.png" onclick="change_img('cb_main_img',2)">
+                                        <img src="img/custom/IDK2C.png" onclick="change_img('cb_main_img',3)"> 
+                                        <img src="img/shoemakers/mark3.png" onclick="change_img('cb_main_img',4)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>CHUNKKA BOOTS 01</h2>
+                                            <p>Php 1,150.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/mark3.png" id="cb_main_img">
+                                            </section>
+                                        <section><button class = "button-modal2"> <a href="order-dropdown.html" type="submit" style ="text-decoration:none" onclick="record_option('chunkka1', 'Brown' , 'PHP 1,150', 'size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+
+                </div>		  		
+					<div class="shoebox"><img class="items" src="img/shoemakers/mark2.png" />
+                    <div class="hover"><h2>Chukka Boots 02</h2> <p>Php1,150.00</p> <a href="#" onclick="display_modal('chunka2')" class="button">Quick view</a></div>
+
+
+                    <div class="modal" id="chunka2" >
+                                <div class="container">
+                                    <article>
+                                    <button class ="button-modal" style = "margin-left:2em; "><a href="mark-agustin.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/IDK1A.png" onclick="change_img('cb2_main_img',1)">
+                                        <img src="img/custom/IDK1B.png" onclick="change_img('cb2_main_img',2)">
+                                        <img src="img/custom/IDK1B copy.png" onclick="change_img('cb2_main_img',3)"> 
+                                        <img src="img/shoemakers/mark2.png" onclick="change_img('cb2_main_img',4)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>CHUNKKA BOOTS 02</h2>
+                                            <p>Php 1,150.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/mark2.png" id="cb2_main_img">
+                                            </section>
+                                        <section><button class = "button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration: none" onclick="record_option('chunkka2', 'Blue' , 'PHP 1,150', 'size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+
+                </div>
+					<div class="shoebox"><img class="items" src="img/shoemakers/mark1.png" />
+                    <div class="hover"><h2>Wingtip and Derby Oxford Casual Shoes</h2> <p>Php1,150.00</p> <a href="#" onclick="display_modal('wdb')"  class="button">Quick view</a></div>
+
+                            <div class="modal" id="wdb" >
+                                <div class="container">
+                                    <article>
+                                   <button class ="button-modal" style = "margin-left:2em; "><a href="mark-agustin.html" style ="text-decoration: none;">BACK</a></button>
+                                        <img src="img/custom/IDK3A.png" onclick="change_img('db_main_img',1)">
+                                        <img src="img/custom/IDK3B.png" onclick="change_img('db_main_img',2)">
+                                        <img src="img/custom/IDK3C.png" onclick="change_img('db_main_img',3)"> 
+                                        <img src="img/shoemakers/mark1.png" onclick="change_img('db_main_img',4)">
+  
+                                    </article>
+                                    <article>
+                                        <section><h2>WINGTIP AND DERBY OXFORD CASUAL SHOES</h2>
+                                            <p>Php 1,150.00</p>
+                                            <div class="price-modal-desc">
+                                                <form>
+                                                    <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
+                                                </form>
+                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart1" class="modal">
+                                                    <div class="modal_content">
+                                                        <p class="desc-font-modif-img">Women's Size Chart</p>
+                                                        <img src="img/custom/Women_s.png">
+                                                        <p class="desc-font-modif-img">Men's Size Chart</p>
+                                                        <img src="img/custom/Sizechart-mens.png">
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </section>
+                                            <section>
+                                                <img src="img/shoemakers/mark1.png" id="db_main_img">
+                                            </section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration:none" onclick="record_option('derby', 'Brown' , 'PHP 1,150', 'size_input1')">Add to Cart</a></button></section>
+                                    </article>
+                                </div>
+                            </div>
+
+
+                </div>
+					<div class="shoebox"></div>		  		
+		  	</article>
+	  	</div>
+	  </main>
+      <script type="text/javascript">
+        function display_modal(target_id)
+        {
+            var dsp = document.getElementById(target_id)
+            dsp.style.display = "block"
+
+            window.onclick = function(event) 
+            {
+                if (event.target == dsp) 
+                {
+                    dsp.style.display = "none";
+                }
+            }
+        }
+        function change_img(target_id,img_number)
+        {
+            var target = document.getElementById(target_id);
+            if(target_id=="cb_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/IDK2A.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/IDK2B.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/custom/IDK2C.png"
+                }
+                else if(img_number==4)
+                {
+                    target.src = "img/shoemakers/mark3.png"
+                }
+            }
+            else if(target_id=="cb2_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/IDK1A.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/IDK1B.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/custom/IDK1B copy.png"
+                }
+                else if(img_number==4)
+                {
+                    target.src = "img/shoemakers/mark2.png"
+                }
+
+            }
+            else if(target_id=="db_main_img")
+            {
+                if(img_number==1)
+                {
+                    target.src = "img/custom/IDK3A.png"
+                }
+                else if(img_number==2)
+                {
+                    target.src = "img/custom/IDK3B.png"
+                }
+                else if(img_number==3)
+                {
+                    target.src = "img/custom/IDK3C.png"
+                }
+                else if(img_number==4)
+                {
+                    target.src = "img/shoemakers/mark1.png"
+                }
+            }
+        }
+
+        function record_option(style, color, price, target_id)
+        {
+            var size_data = document.getElementById(target_id).value;
+            localStorage.setItem("size_data", size_data);
+            localStorage.setItem("style_color_choice", color);
+            localStorage.setItem("style_choice", style);
+            localStorage.setItem("price_total", price);
+
+        }
+    </script>
+	</body>
+</html>

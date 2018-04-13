@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+      body {
+        background-color: #edabbe;
+      }
+      .button {
+        width: 20em;
+      }
+      h4 {
+        text-align: center;
+      }
+      #main {
+        position: relative;
+        top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+      }
+      .prevnext {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .progress .circle {
+        background-color: #7cb8b6;
+        border: 5px solid #edabbe;
+      }
+
+      .progress .active {
+        background-color: #7cb8b6;
+        border: none;
+      }      
+      .confirmation {
+        display: grid;
+        grid-template-columns: 22em 50em;
+        grid-template-rows: 1fr;
+        grid-template-areas: "personal order";
+        margin: auto;
+        width: 95%;
+      }
+      .confirmation section:nth-child(1) { justify-self: center; grid-area: personal; }
+      .confirmation section:nth-child(2) { justify-self: center; grid-area: order; }
+      
+      .subtotal {
+        width: 100%;
+        margin: auto;
+        text-align: right;
+        padding: 2em;
+      }
+      .align-left {
+        text-align: left;
+      }
+
+            .button {
+        width: 20em;
+      }
+      h4 {
+        text-align: center;
+      }
+      #main {
+        position: relative;
+        top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+      }
+      .order-dropdown {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 90%;
+        margin: -2px -.1em auto;
+        padding: 2em;
+        border: 2px solid #fff;
+      }
+
+      .order-dropdown section {
+        height: auto;
+      }
+      .order-dropdown section:nth-child(1) {
+        width: 25%;
+      }
+      .order-dropdown section:nth-child(2) {
+        width: 35%;
+        padding-top: 6em;
+      }
+      .order-dropdown section:nth-child(3) {
+        width: 20%;
+        padding-top: 6em;
+      }
+      .order-dropdown section:nth-child(4) {
+        width: 15%;
+        padding-top: 6em;
+      }
+      .order-dropdown section img {
+        object-fit: contain;
+        width: 100%;
+      }
+      .order-dropdown select {
+        width: 100%;
+        background-color: transparent;
+        font-size: 1em;
+        font-family: inherit;
+        color: #fff;
+        border-right: none;
+        border-top: none;
+        border-left: none;
+        border-bottom: 3px solid white;
+        width: 8em;
+      }
+      .order-dropdown select + i {
+        position: absolute;
+        margin: 7px 0 0 -20px;
+        font-size: 10px;
+      }
+      .subtotal {
+        width: 65%;
+        margin: auto;
+        text-align: right;
+        padding: 2em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- a handy skip link for keyboard users -->
+    <a href="#main" id="skip">skip to main content</a>
+    <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+    <main id="main">
+      <h1 class="caps">Order Form</h1>
+
+      <div class="progress">
+        <div class="circle">
+          <span class="label">1</span>
+          <span class="title">Order Summary</span>
+        </div>
+        <span class="bar done"></span>
+        <div class="circle">
+          <span class="label">2</span>
+          <span class="title">Personal Details</span>
+        </div>
+        <span class="bar half"></span>
+        <div class="circle active">
+          <span class="label">3</span>
+          <span class="title">Confirmation</span>
+        </div>
+      </div>
+
+        <div class="confirmation">
+          <section id="personal_details">
+            <h4 class="align-left">Personal Details</h4>
+          </section>
+          <section>
+            <h4 class="align-left">Order Details</h4>
+            <div>
+              <div class="order-dropdown">
+                <section id="img_container">
+                </section>
+                <section>
+                <select name="color" value="Color" id="color_container"></select>
+                </section>
+                <section>
+                  <select name="quantity" value="Quantity" id="amount_container">
+                    <option value="1">1</option>
+                  </select>
+                </section>
+                <section>
+                  <strong id="price_container"></strong>
+                </section>
+              </div>
+            </div>
+
+            <div class="subtotal">Subtotal: <strong id="subtotal_desc">Php 7,200.00</strong></div>
+          </section>
+        </div>  
+
+      <div id="by-product"></div>
+
+      
+
+      <div class="prevnext">
+        <a href="personal-details.html" class="button">Back</a>
+        <a href="email-finish.html" class="button">Proceed</a>
+      </div>
+    </main>
+ <script type="text/javascript">
+    var style_choice = localStorage.getItem("style_choice");
+    var style_color = localStorage.getItem("style_color_choice");
+    var price_total = localStorage.getItem("price_total");
+    var size_data = localStorage.getItem("size_data");
+    var img_container = document.getElementById("img_container")
+    var color_container = document.getElementById("color_container")
+    var amount_container = document.getElementById("amount_container")
+    var price_container = document.getElementById("price_container")
+    var subtotal_desc = document.getElementById("subtotal_desc")
+    if(style_choice=="slide")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "SLIDE"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Pads Shuz"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_content.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+
+
+      if(style_color=="white")
+      {
+        main_img.src = "img/custom/Side-white.png";
+        color_option.innerHTML = "White";
+      }
+      else if(style_color=="tan")
+      {
+        main_img.src = "img/custom/Side-Tan.png";
+        color_option.innerHTML = "Tan";
+      }
+      else if(style_color=="black")
+      {
+        main_img.src = "img/custom/Side-black.png";
+        color_option.innerHTML = "Black";
+      }
+      else if(style_color=="maroon")
+      {
+        main_img.src = "img/custom/Side-Maroon.png";
+        color_option.innerHTML = "Maroon";
+      }
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+
+      localStorage.setItem("style_choice", "slide")
+
+    }
+    else if(style_choice=="tassel")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "TASSEL LOAFER"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "OLY Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+  
+
+      if(style_color=="brown")
+      {
+        main_img.src = "img/custom/OLYBrown.png";
+        color_option.innerHTML = "Brown"
+      }
+      else if(style_color=="black")
+      {
+        main_img.src = "img/custom/OLYBlack.png";
+        color_option.innerHTML = "Black"
+      }
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "tassel")
+    }
+    else if(style_choice=="estelle")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "ESTELLE"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Leather&Feet"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-style-img2");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+
+      if(style_color=="black")
+      {
+        main_img.src = "img/custom/TopBlack.png";
+        color_option.innerHTML = "Black"
+      }
+      else if(style_color=="green")
+      {
+        main_img.src = "img/custom/TopGreen.png";
+        color_option.innerHTML = "Green"
+      }
+      else if(style_color=="blue")
+      {
+        main_img.src = "img/custom/TopBlue.png";
+        color_option.innerHTML = "Blue"
+      }
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "estelle")
+
+    }
+    else if(style_choice=="godfather")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "GS6"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Godfather Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-style-img2");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      
+
+      if(style_color=="brown")
+      {
+        main_img.src = "img/custom/GF4.png";
+        color_option.innerHTML = "Brown";
+      }
+      else if(style_color=="black")
+      {
+        main_img.src = "img/custom/GS6BLACK.png";
+        color_option.innerHTML = "Black"
+      }
+      else if(style_color=="dark-brown")
+      {
+        main_img.src = "img/custom/GS6DarkBrown.png";
+        color_option.innerHTML = "Dark Brown"
+      }
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+      localStorage.setItem("style_choice", "godfather")
+
+    }
+    else if(style_choice=="boots")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "BOOTS"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "OLY Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/Rolando2.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+    }
+    else if(style_choice=="loafers")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "LOAFERS"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "OLY Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/Rolando3.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+
+      localStorage.setItem("style_choice", "loafers")
+    }
+    else if(style_choice=="desintas")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "DE SINTAS"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "OLY Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_desc = document.createElement('p')
+      subtotal_content.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/Rolando4.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "desintas")
+    }
+    else if(style_choice=="mule")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "MULE"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Padz Shuz"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/PS3A.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+
+      localStorage.setItem("style_choice", "mule")
+    }
+    else if(style_choice=="sneakers")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "SNEAKERS"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Padz Shuz"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/PS1A.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "sneakers")
+    }
+    else if(style_choice=="chunkka1")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "CHUNKKA 1"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Mardini Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_desc = document.createElement('p')
+      subtotal_content.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/mark3.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+      localStorage.setItem("style_choice", "chunkka1")
+    }
+    else if(style_choice=="chunkka2")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "CHUNKKA 2"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Mardini Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/mark2.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "chunkka2")
+    }
+    else if(style_choice=="derby")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "WINGTIP AND DERBY OXFORD CASUAL SHOES"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Mardini Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/mark1.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "derby")
+    }
+    else if(style_choice=="gsbrown")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "GS6 IN BROWN TOURMALINE"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Godfather Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/GF4.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "gsbrown")
+    }
+    else if(style_choice=="gsblue")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "GS1.1 IN DARK BLUE AZURITE"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Godfather Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/GS6-BL4.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "gsblue")
+    }
+    else if(style_choice=="gsdarkbrown")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "GS1.1 IN OAKWOOD BROWN"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Godfather Shoes"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/Untitled-1.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "gsdarkbrown")
+
+    }
+    else if(style_choice=="ingrid")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "INGRID"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Leather&Feet"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img2");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/nina2.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content);
+      localStorage.setItem("style_choice", "ingrid")
+    }
+    else if(style_choice=="jacqui")
+    {
+      var main_title = document.createElement('p');
+      main_title.innerHTML = "JACQUI"
+      var main_desc = document.createElement('p');
+      main_desc.innerHTML = "Leather&Feet"
+      var extra_desc = document.createElement('p');
+      extra_desc.innerHTML = price_total
+      var size_desc = document.createElement('p');
+      size_desc.innerHTML = size_data
+      var main_img = document.createElement('img');
+      main_img.classList.add("customize-of-img2");
+      var color_option = document.createElement('option')
+      var price_content = document.createElement('p')
+      price_content.innerHTML = price_total;
+      var subtotal_content = document.createElement('p')
+      subtotal_desc.innerHTML = price_total;
+      main_title.classList.add("img-text-of-title")
+      main_desc.classList.add("img-text-of-desc")
+      extra_desc.classList.add("img-text-of-desc")
+      size_desc.classList.add("img-text-of-desc")
+      price_content.classList.add("price-text-of-desc")
+      subtotal_content.classList.add("price-text-of-desc2")
+      subtotal_content.classList.add("flex-right")
+      main_img.src = "img/custom/nina3.png";
+      color_option.innerHTML = style_color
+
+      img_container.appendChild(main_img);
+      img_container.appendChild(main_title);
+      img_container.appendChild(main_desc);
+      img_container.appendChild(size_desc);
+      color_container.appendChild(color_option);
+      price_container.appendChild(price_content)
+      localStorage.setItem("style_choice", "jacqui")
+    }
+    var full_name = localStorage.getItem("full_name");
+    var cp_number = localStorage.getItem("cp_number");
+    var lnd_number = localStorage.getItem("lnd_number");
+    var email_addr = localStorage.getItem("email_addr");
+    var physical_adrr = localStorage.getItem("physical_adrr");
+    var city = localStorage.getItem("city");
+    var zipcode = localStorage.getItem("zipcode");
+
+    var fn = document.createElement('p');
+    var cp = document.createElement('p');
+    var ln = document.createElement('p');
+    var ea = document.createElement('p');
+    var pa = document.createElement('p');
+    var ct = document.createElement('p');
+    var zc = document.createElement('p');
+
+    fn.innerHTML = full_name;
+    cp.innerHTML = cp_number;
+    ln.innerHTML = lnd_number;
+    ea.innerHTML = email_addr;
+    pa.innerHTML = physical_adrr;
+    ct.innerHTML = city;
+    zc.innerHTML = zipcode;
+
+    var append_personal = document.getElementById("personal_details")
+    append_personal.appendChild(fn);
+    append_personal.appendChild(cp);
+    append_personal.appendChild(ln);
+    append_personal.appendChild(ea);
+    append_personal.appendChild(pa);
+    append_personal.appendChild(ct);  
+    append_personal.appendChild(zc); 
+    obj = JSON.parse(localStorage.getItem("purchase_data"))
+    
+
+    if(typeof obj==='undefined'||obj==null)
+    {
+      var obj = [];
+      var style_choice = localStorage.getItem("style_choice");
+      var style_color = localStorage.getItem("style_color_choice");
+      var price_total = localStorage.getItem("price_total");
+      var size_data = localStorage.getItem("size_data");
+      obj.push({"style:": style_choice, "color": style_color, "price": price_total, "size": size_data, "full_name": full_name, "cellphone": cp_number, "landline": lnd_number, "email": email_addr, "address": physical_adrr, "city":city, "zipcode":zipcode})
+      localStorage.setItem("purchase_data",JSON.stringify(obj));
+    }
+    else
+    { 
+      obj = JSON.parse(localStorage.getItem("purchase_data"))
+      var style_choice = localStorage.getItem("style_choice");
+      var style_color = localStorage.getItem("style_color_choice");
+      var price_total = localStorage.getItem("price_total");
+      var size_data = localStorage.getItem("size_data");
+      obj.push({"style": style_choice, "color": style_color, "price": price_total, "size": size_data, "full_name": full_name, "cellphone": cp_number, "landline": lnd_number, "email": email_addr, "address": physical_adrr, "city":city, "zipcode":zipcode})
+      localStorage.setItem("purchase_data",JSON.stringify(obj));
+    }
+  </script>
+  </body>
+</html>

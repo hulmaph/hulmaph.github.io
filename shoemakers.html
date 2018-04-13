@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	body {
+    		background-color: #EAABBF;
+    	}
+    	.button {
+    		width: 20em;
+    	}
+    	h4 {
+    		text-align: center;
+    	}
+    	#main {
+    		position: relative;
+    		top: 5em;
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+    	}
+    	.shoemaker-odd, .shoemaker-even {
+    		display: grid;
+    		grid-template-columns: 1fr 1fr;
+    		grid-template-rows: 1fr;
+    		grid-template-areas: "left right";	
+    		grid-column-gap: 2em;
+    		margin: auto;
+    		padding: 7em 6em;
+    	}
+    	.shoemaker-odd h1, .shoemaker-even h1, .shoemaker-odd h4, .shoemaker-even h4 {
+    		text-align: left;
+    	}
+    	.shoemaker-odd img, .shoemaker-even img {
+    		max-width: 500px;
+    		width: 100%;
+    	} 
+    	.shoemaker-odd section:nth-child(1) { grid-area: left; justify-self: center; }
+    	.shoemaker-odd section:nth-child(2) { grid-area: right; }
+    	.shoemaker-even section:nth-child(1) { grid-area: right; justify-self: center; }
+    	.shoemaker-even section:nth-child(2) { grid-area: left; }
+
+      footer {
+        background-color: #7cb8b6;
+      }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+      <header>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+      </header>
+
+	  <main id="main">
+	  	<h1 class="caps">The Shoemakers of Marikina</h1>
+	  	<h4><em>get to know the people behind every sole you wear</em></h4>
+
+	  <!-- rolando santos -->
+	  <div id="rolando" class="shoemaker-odd">
+	  	<section><img src="img/rolando-santos.png" />
+	  		<a href="rolando-santos.html" class="button">Check his collection</a></section>
+	  	<section>
+	  		<h1>Rolando Santos</h1>
+	  		<h4>of OLY Shoes</h4>
+	  		<p>Before he bagged the reputation of being the "Presidential Shoemaker that Marikina is very prideful of, he was just a shoemaker who was very talented and passionate with the craft because of growing up in a family of sapateros. His talent brought him to so many places but in the end, he couldn't resist but comeback to his hometown. He became very optimistic about rising from the crisis of the industry by making a living out of the craft he is most passionate in."</p>
+	  		<p>Being very hands on with the craft, he never gets tired of doing the craft on a daily basis because for him, it is something he will keep doing as long as his body permits him to.</p>
+	  	</section>
+	  </div>
+
+	  <!-- kenneth padayao -->
+	  <div id="kenneth" class="shoemaker-even">
+	  	<section><img src="img/kenneth-padayao.png" />
+	  		<a href="kenneth-padayao.html" class="button">Check his collection</a></section>
+	  	<section>
+	  		<h1>Kenneth Padayao</h1>
+	  		<h4>of Padz Shuz</h4>
+	  		<p>A 24 year old shoemaker who has been in the industry for five years now is doing his best to keep the business going and produce the best shoes. Because of financial constraints to finish his degree, hechose to take over his family's business of shoemaking and participate in whatever way he can in both managing and making shoes himself. When asked what challenges he had to face as a shoemaker, he struggled to circulate the money around as well as lack of capital in order to keep the business going. </p>
+	  		<p>"Masisigurado ko na ang aming gawa ay matibay, komportable, sunod sa uso, at binuo ito mula sa aming puso."</p>
+	  	</section>
+	  </div>
+
+	  <!-- aaron-angeles -->
+	  <div id="aaron" class="shoemaker-odd">
+	  	<section><img src="img/aaron-angeles.png" />
+	  		<a href="aaron-angeles.html" class="button">Check his collection</a></section>
+	  	<section>
+	  		<h1>Aaron Angeles</h1>
+	  		<h4>of Godfather Shoes</h4>
+	  		<p>Focusing more on the vision and the marketing part of the local shoebrand Godfather Shoes, his ultimate goal in the industry is to make his brand stand out in the market. He believes and wants others to believe that the local shoeindustry is worth giving a shot. He wants others to give the local industry a chance to prove that Filipinos can also create products that are at par with the international market. He uses his expertise as a visionary and a marketer to alleviate the image of Marikina Shoe Industry to both local and international clients.</p>
+	  	</section>
+	  </div>
+
+	  <!-- nina-chua -->
+	  <div id="nina" class="shoemaker-even">
+	  	<section><img src="img/nina-chua.png" />
+	  		<a href="nina-chua.html" class="button">Check her collection</a></section>
+	  	<section>
+	  		<h1>Niña Chua</h1>
+	  		<h4>of Leather & Feet</h4>
+	  		<p> Focusing more on the vision and the marketing part of the local shoebrand Godfather Shoes, his ultimate goal in the industry is to make his brand stand out in the market. He believes and wants others to believe that the local shoeindustry is worth giving a shot. He wants others to give the local industry a chance to prove that Filipinos can also create products that are at par with the international market. He uses his expertise as a visionary and a marketer to alleviate the image of Marikina Shoe Industry to both local and international clients.</p>
+	  	</section>
+	  </div>
+
+	  <!-- mark-augustin -->
+	  <div id="mark" class="shoemaker-odd">
+	  	<section><img src="img/mark-augustin.png" />
+	  		<a href="mark-augustin.html" class="button">Check his collection</a></section>
+	  	<section>
+	  		<h1>Mark Vincent Cruz Agustin</h1>
+	  		<h4>of Mardini Shoes</h4>
+	  		<p>Being in the industry since the year 1996, this 26-year-old is keeping the family-owned shoemaking business afloat that was passed down to him by his grandparents. He confessed that making shoes is really hard at the start, but it gets easier as time goes by because of getting used with the system of making them.</p>
+	  		<p>Among the many type of shoes that he makes, women's boots, topsiders, and driving shoes are some of his most favorite styles to make. When asked if Marikina Shoe Industry needs the exposure and attention it used to posses, he didn't hesitate and said yes. He encourages the future buyers of his collection to support local. </p>
+	  		<p>"Tangkilikin ang sapatos Marikina!"</p>
+	  	</section>
+	  </div>
+	  </main>
+
+        <footer>
+      <div class="footer-links">
+        <div>Contact Us</div>
+        <div>
+          <ul>
+            <li>+63 917 897 5156</li>
+            <li>hulmaphil@gmail.com.ph</li>
+          </ul>
+        </div>
+        <div>Services</div>
+        <div>
+        <ul>  
+          <li>Contact Us</li>
+          <li>Ordering</li>
+          <li>FAQ</li>
+          <li>Sizing Guide</li>
+        </ul>
+        </div>
+      </div>
+
+      </div>
+      <ul class="social">
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      </ul>
+    </footer>
+	</body>
+</html>

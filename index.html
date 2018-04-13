@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- declare characterset -->
+    <meta charset="utf-8">
+    <!-- a viewport declaration which does not disable zooming -->
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <!-- a non-blocking base64-encoded font resource -->
+    <!-- <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'"> -->
+    <!-- <noscript><link rel="stylesheet" href="fonts.css"></noscript> -->
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="style.css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- a descriptive label for the page -->
+    <title>Hulma - Home</title>
+    <style type="text/css">
+    	  	.slideshow-container {
+  		margin: auto;
+  		width: 1200px;
+  		height: 1000px;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  	}
+		.slide-odd {
+			display: grid;
+			grid-template-columns: 1fr 30em;
+			grid-template-rows: 1fr;
+			grid-template-areas: "shoes details";
+			grid-column-gap: 2em;
+			margin: auto;
+		}
+
+		.slide-odd img {
+			object-fit: contain;
+			width: 100%;
+		}
+		.slide-odd section:nth-child(1) { align-self: center; grid-area: shoes; }
+		.slide-odd section:nth-child(2) { align-self: center; grid-area: details; }
+
+		.slide-even {
+			display: grid;
+			grid-template-columns: 30em 1fr;
+			grid-template-rows: 1fr;
+			grid-template-areas: "details shoes";
+			grid-column-gap: 2em;
+		}
+
+		.slide-even img {
+			object-fit: contain;
+			width: 100%;
+		}
+		.slide-even section:nth-child(2) { align-self: center; grid-area: shoes; }
+		.slide-even section:nth-child(1) { align-self: center; grid-area: details; }
+
+		.dot {
+		  cursor: pointer;
+		  height: 12px;
+		  width: 12px;
+		  background-color: #bbb;
+		  border-radius: 50%;
+		  display: inline-block;
+		  transition: background-color 0.6s ease;
+		}
+
+		.active, .dot:hover {
+		  background-color: #717171;
+		}
+
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 1.5s;
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+
+		.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+h3 {
+	font-family: Patua One, cursive;
+	font-style: normal;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.story-story
+{
+	font-size: 2.3em;
+  	font-family: 'Bree Serif'; serif;
+  	font-weight: 600;
+}
+
+.story-story2
+{
+	font-size: 1.5em;
+    font-family: 'Raleway';
+    font-weight: 600;
+    padding: 0 0 0 2em;
+}
+
+.story-story3
+{
+	font-size: 1.5em;
+    font-family: 'Raleway';
+    font-weight: 600;
+    padding: 0 0 0 2.8em;
+}
+
+.story-story4
+{
+	font-size: 1.5em;
+    font-family: 'Raleway';
+    font-weight: 600;
+    max-width: 20em;
+    margin: 0;
+}
+
+.story-title
+{
+	font-size: 2em;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color:white;
+    padding-left: 2em;
+}
+
+.story-title2
+{
+	font-size: 2em;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color:white;
+}
+
+.caps
+{
+  font-size:2.5em;
+  font-family: 'Raleway'; sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+h3
+{
+	padding: 0em;
+}
+
+.margin-adjust
+{
+	margin-bottom: 1em;
+}
+
+p
+{
+	line-height: 1em;
+}
+
+.shoemakers-font-desc2
+{
+	font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+    font-weight: 100;
+    margin: 25px auto 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+}
+
+h4.shoemakers-font { font-family: 'Futura', 'Century Gothic', sans-serif; color: #fff; font-size: 1.5em; font-weight: normal; }
+section .icon { float: left; width: 40%; }
+section .info { float: right; width: 55%; }
+section .info .button { width: 100%; }
+  	</style>
+  </head>
+
+	<body>
+	  <!-- a handy skip link for keyboard users -->
+	  <a href="#main" id="skip">skip to main content</a>
+	  <!-- logo / page navigation etc. goes here -->
+
+	  <header>
+	  	<a href="index.html"><img class="logo" src="img/logo.png" alt="Hulma" /></a>
+      <nav id="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html#products-bg">Products</a></li>
+          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="#">Order Form</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+        </ul>
+      </nav>
+	  </header>
+
+	  <main id="main">
+
+<div id="slider-bg">
+		  	<div class="slider">
+		  		<div class="slideshow-container">
+
+						<div class="mySlides fade">
+ 	 						<div class="slide-odd">
+ 	 							<section>
+									<img src="img/slide1.png" /></section>
+								<section>
+					    		<div class="icon">
+					    			<img src ="img/shoemakers/Circle-RS.png" />
+					    		</div>
+					    		<div class="info">
+						    		<h4 class="shoemakers-font"> ROLANDO SANTOS</h4>
+						    		<p class="shoemakers-font-desc2"> The pride of Marikina, best known for being the country's President shoemaker</p>
+						    		<a class="button" href="rolando-santos.html"> CHECK HIS COLLECTION </a>
+					    		</div>
+					    	</section>
+    					</div>
+						</div>
+
+
+						<div class="mySlides fade">
+					 	 	<div class = "slide-even">
+					 	 		<section>
+					 	 			<div class="icon">
+									<img src ="img/shoemakers/Circle-KP.png" /> 
+								</div>
+								<div class="info">
+									<h4 class="shoemakers-font"> KENNETH PADAYAO</h4>
+									<p class="shoemakers-font-desc2"> One of the youngest shoemakers in Marikina who is passionate in bringing back the industry's glory</p>
+									<a class="button" href="kenneth-padayao.html"> CHECK HIS COLLECTION </a>
+								</div>
+								</section>
+								<section>
+							  	<img src="img/slide2.png" />
+								</section>
+					        </div>
+					  </div>
+
+
+						<div class="mySlides fade">
+					 	 	<div class = "slide-odd">
+					 	 		<section>
+					  			<img src="img/slide3.png">
+					  		</section>
+					  		<section>
+					  			<div class="icon">
+								  <img src ="img/shoemakers/Circle-MA.png" /> 
+								</div>
+								<div class="info">
+								  <h4 class="shoemakers-font"> MARK AGUSTIN</h4>
+									<p class="shoemakers-font-desc2">Making shoes was what he considered not a struggle, but a fulfilling job that he gets to do for both his family and hometown</p>
+									<a class="button" href="mark-agustin.html"> CHECK HIS COLLECTION </a>
+								</div>
+								</section>
+							</div>
+						</div>
+
+						<div class="mySlides fade">
+					 	 	<div class = "slide-odd">
+					 	 		<section>
+					  			<img src="img/slide4.png">
+					  		</section>
+					  		<section>
+					  			<div class="icon">
+					  				<img src ="img/shoemakers/Circle-AA.png"> 
+					  			</div>
+					  			<div class="info">
+					  				<h4 class="shoemakers-font"> AARON ANGELES</h4>
+					  				<p class="shoemakers-font-desc2"> The up and coming owner and shoemaker from the brand Godfather shoes</p>
+					  				<a class="button" href="aaron-angeles.html"> CHECK HIS COLLECTION </a>
+					  			</div>
+					  			</section>
+							</div>
+						</div>
+
+				   <div class="mySlides fade">
+				 	 	<div class = "slide-even">  
+				 	 		<section>
+				 	 			<div class="icon">
+						  	<img src ="img/shoemakers/Circle-NC.png">
+						  </div>
+						  <div class="info">
+				  				<h4 class="shoemakers-font"> NIÑA CHUA</h4>
+				  				<p class="shoemakers-font-desc2"> Acquired the craft through her parents, she hasn't stopped producing stylish shoes for women</p>
+				  				<a class="button" href="nina-chua.html"> CHECK HER COLLECTION </a>
+				  			</div>
+				  			</section>
+								<section>
+				  			<img src="img/slide5.png" />
+								</section>
+				    </div>
+					</div>
+    </div>
+    <div style="text-align:center; padding: 10px 0;">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		  <span class="dot" onclick="currentSlide(4)"></span>
+		  <span class="dot" onclick="currentSlide(5)"></span>
+		</div>
+  </div>
+</div>
+
+<div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
+
+	  	<div id="products-bg">
+	  	<div class="products">
+		  		<div class="shoes">
+		  			<div><h1 class="caps" style="padding-right: 2em;">Products</h1>
+		  				<p>Marikina takes pride in its timeless high-quality produced footwear that are stylish and are worth flaunting to everybody.</p>
+		  			</div>
+		  			<div><a href="rolando-santos.html"><img src="img/products/1.png" /></a></div>
+		  			<div><a href="kenneth-padayao.html"><img src="img/products/2.png" /></a></div>
+		  			<div><a href="mark-augustin.html"><img src="img/products/3.png" /></a></div>
+		  			<div><a href="aaron-angeles.html"><img src="img/products/4.png" /></a></div>
+		  			<div><a href="nina-chua.html"><img src="img/products/5.png" /></a></div>
+		  		</div>
+		  	</div>
+	  	</div>
+
+		  <div id="customize-bg">
+		  	<div id="customize" class="custom">
+		  		<div>
+		  			<h1>Customize your <br/>own pair!</h1>
+		  			<p>Tweak the existing designs based on your own <br/> preference and get the chance to personalize them 	too!</p>
+		  			<a href="customize-style.html" style ="margin-top: 3em" class="button">Customize</a>
+		  		</div>
+		  	</div>
+		  </div>
+
+			<div id="story-bg">
+		  	<div id="story" class="story">
+		  			<h1 class="caps">Our Story</h1>
+		  			<h3 class="story-title" style = "font-size: ">About Hulma</h3>
+		  			<div class="story-a">
+		  				<div><img src="img/story-one.png" /></div>
+		  				<div><h2 class="story-story">Hulma has the best Marikina shoemakers has to offer - high quality and customizable stylish footwear!</h2>
+		  					<div class="blue">&nbsp;</div>
+		  				</div>
+		  				<div><p class="story-story2">Hulma was founded by Janina Halagueña with a goal of bridging the local shoemakers from Marikina City with different customers to increase and sustain their artisanal jobs. Handmade in Marikina, Hulma features boots, loafers, shoes, and sandals in designs that maintain the high-quality aspect they are best known for as well as stylish characteristic that makes it worth flaunting. </p>
+		  				<div class="blue">&nbsp;</div>
+		  			</div>
+		  				<div><img src="img/story-two.jpg" /></div>
+		  			</div>
+
+		  			<div class="story-b">
+		  				<div>
+		  					<h3 class="story-title">The Shoemakers of Marikina</h3>
+		  					<p class="story-story3">With the spirit of sustaining Marikina artisinal shoemaking jobs, you are invited to discover who is behind the making of the shoes you are about to purchase and to see their passion for the craft.</p>
+		  					<a class="read-more" href="shoemakers.html">Read more</a>
+		  				</div>
+		  				<div><a href="shoemakers.html#rolando"><img src="img/nrolando.png" /></a></div>
+		  				<div><a href="shoemakers.html#kenneth"><img src="img/nkenneth.png" /></a></div>
+		  				<div><a href="shoemakers.html#aaron"><img src="img/naaron.png" /></a></div>
+		  				<div><a href="shoemakers.html#mark"><img src="img/nmark.png" /></a></div>
+		  				<div><a href="shoemakers.html#nina"><img src="img/nnina.png" /></a></div>
+		  			</div>
+
+		  			<div class="story-c">
+		  				<div><img src="img/marikina-river.png" /></div>
+		  				<div><h3 class="story-title2">The Marikina Shoe Industry</h3>
+		  					<p class="story-story4 margin-adjust">The shoe industry of Marikina can be traced down to the story of a man's trailblazing spirit that started because of a very ordinary problem - repair the shoes he has that was purchased aborad. This man did his best to repair the shoes, which then led to the promulgation of the industry throughout.</p>
+		  					<p class="story-story4">The industry is still very much alive, but is however facing a crisis - the arrival of foreign producers has brought tough competition to the local shoemakers of Marikina. However, what still stays true throughout everything is what makes their produce distinct from competitors - their value for high-quality footwear.</p>
+		  					<div class="pink">&nbsp;</div>
+		  				</div>
+		  			</div>
+		  	</div>
+		  </div>
+	  
+	  </main>
+		<footer>
+			<div class="footer-links">
+				<div>Contact Us</div>
+				<div>
+					<ul>
+						<li>+63 917 897 5156</li>
+						<li>hulmaphil@gmail.com.ph</li>
+					</ul>
+				</div>
+				<div>Services</div>
+				<div>
+				<ul>	
+					<li>Contact Us</li>
+					<li>Ordering</li>
+					<li>FAQ</li>
+					<li>Sizing Guide</li>
+				</ul>
+				</div>
+			</div>
+
+			</div>
+			<ul class="social">
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      </ul>
+		</footer>
+
+	<script type="text/javascript">
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	      slides[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	      dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+	</script>
+	</body>
+</html>
