@@ -32,6 +32,25 @@
     		display: inline-block;
     		color: #000 !important;
     	}
+        .button-modal {
+            margin-left:2em;
+
+        }
+        .button-modal a{
+            text-decoration: none; 
+            color:black; 
+            font-weight: 600;
+        }
+
+        .button-modal2 a {
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .modal_content img {
+            width: 3em;
+            height: 3em;
+        }
     	h1 {
     		text-align: left;
     	}
@@ -172,6 +191,21 @@
         padding: 10px 0;
     }
     .modal img { opacity: 1.0; }
+        .modal_content img {
+        width: 35em;
+        height: 35em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        }
+    .modal_content p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-size: 2em;
+    }
     .modal:hover img { opacity: 1.0; }   
   	</style>
   </head>
@@ -186,7 +220,7 @@
       <nav id="navigation">
         <ul class="nav-links">
           <li><a href="index.html#products-bg">Products</a></li>
-          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="index.html#customize-bg">Customize</a></li>
           <li><a href="#">Order Form</a></li>
           <li><a href="index.html#story">Our Story</a></li>
         </ul>
@@ -231,8 +265,9 @@
                                                     <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
                                                 </form>
                                                 <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
-                                                <div id="size_chart1" class="modal">
+                                                <div id="size_chart1" class="modal" style = "background-color: #eaabbf">
                                                     <div class="modal_content">
+                                                        <button class ="button-modal2"><a href="aaron-angeles.html">x</a></button>
                                                         <p class="desc-font-modif-img">Women's Size Chart</p>
                                                         <img src="img/custom/Women_s.png">
                                                         <p class="desc-font-modif-img">Men's Size Chart</p>
@@ -244,7 +279,7 @@
                                             <section>
                                                 <img src="img/shoemakers/aaron1.png" id="bl_main_img">
                                             </section>
-                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration: none" onclick="record_option('gsblue', 'Blue' , 'PHP 4,999', 'size_input1')">Add to Cart</a></button></section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" type="submit" style ="text-decoration: none" onclick="record_option('gsblue', 'Blue' , 'PHP 4,999', 'size_input1')">ADD TO CART</a></button></section>
                                     </article>
                                 </div>
                             </div>
@@ -271,9 +306,10 @@
                                                 <form>
                                                     <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
                                                 </form>
-                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
-                                                <div id="size_chart1" class="modal">
+                                                <a onclick="display_modal('size_chart2')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart2" class="modal" style = "background-color: #eaabbf">
                                                     <div class="modal_content">
+                                                        <button class ="button-modal2"><a href="aaron-angeles.html">x</a></button>
                                                         <p class="desc-font-modif-img">Women's Size Chart</p>
                                                         <img src="img/custom/Women_s.png">
                                                         <p class="desc-font-modif-img">Men's Size Chart</p>
@@ -285,7 +321,7 @@
                                             <section>
                                                 <img src="img/shoemakers/aaron2.png" id="br_main_img">
                                             </section>
-                                        <section><button class ="button-modal2"><a href="order-dropdown.html" style ="text-decoration: none" type="submit" onclick="record_option('gsbrown', 'Brown' , 'PHP 5,900', 'size_input1')">Add to Cart</a></button></section>
+                                        <section><button class ="button-modal2"><a href="order-dropdown.html" style ="text-decoration: none" type="submit" onclick="record_option('gsbrown', 'Brown' , 'PHP 5,900', 'size_input1')">ADD TO CART</a></button></section>
                                     </article>
                                 </div>
                             </div>
@@ -311,9 +347,10 @@
                                                 <form>
                                                     <input type="text" name="size" id="size_input1" class="text-box-spacing2" value="Input Size Here">
                                                 </form>
-                                                <a onclick="display_modal('size_chart1')" class="size-chart-link" href="#">Size Guide</a>
-                                                <div id="size_chart1" class="modal">
+                                                <a onclick="display_modal('size_chart3')" class="size-chart-link" href="#">Size Guide</a>
+                                                <div id="size_chart3" class="modal" style = "background-color: #eaabbf">
                                                     <div class="modal_content">
+                                                        <button class ="button-modal2"><a href="aaron-angeles.html">x</a></button>
                                                         <p class="desc-font-modif-img">Women's Size Chart</p>
                                                         <img src="img/custom/Women_s.png">
                                                         <p class="desc-font-modif-img">Men's Size Chart</p>
@@ -325,7 +362,7 @@
                                             <section>
                                                 <img src="img/shoemakers/aaron3.png" id="dbr_main_img">
                                             </section>
-                                        <section><button class = "button-modal2"><a href="order-dropdown.html" style = "text-decoration:none" type="submit"onclick="record_option('gsdarkbrown', 'Dark Brown' , 'PHP 4,999', 'size_input1')">Add to Cart</a></button></section>
+                                        <section><button class = "button-modal2"><a href="order-dropdown.html" style = "text-decoration:none" type="submit"onclick="record_option('gsdarkbrown', 'Dark Brown' , 'PHP 4,999', 'size_input1')">ADD TO CART</a></button></section>
                                     </article>
                                 </div>
                             </div>

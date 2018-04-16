@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -155,7 +156,7 @@
       <nav id="navigation">
         <ul class="nav-links">
           <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#customize">Customize</a></li>
+          <li><a href="index.html#customize-bg">Customize</a></li>
           <li><a href="#">Order Form</a></li>
           <li><a href="index.html#story">Our Story</a></li>
         </ul>
@@ -922,8 +923,6 @@
     append_personal.appendChild(ct);  
     append_personal.appendChild(zc); 
     obj = JSON.parse(localStorage.getItem("purchase_data"))
-    
-
     if(typeof obj==='undefined'||obj==null)
     {
       var obj = [];
@@ -931,7 +930,7 @@
       var style_color = localStorage.getItem("style_color_choice");
       var price_total = localStorage.getItem("price_total");
       var size_data = localStorage.getItem("size_data");
-      obj.push({"style:": style_choice, "color": style_color, "price": price_total, "size": size_data, "full_name": full_name, "cellphone": cp_number, "landline": lnd_number, "email": email_addr, "address": physical_adrr, "city":city, "zipcode":zipcode})
+      obj.push({"style": style_choice, "color": style_color, "price": price_total, "size": size_data, "full_name": full_name, "cellphone": cp_number, "landline": lnd_number, "email": email_addr, "address": physical_adrr, "city":city, "zipcode":zipcode})
       localStorage.setItem("purchase_data",JSON.stringify(obj));
     }
     else
